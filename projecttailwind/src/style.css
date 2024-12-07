@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.img:before{
+    @apply content-none	absolute bg-blue-500 rounded-full w-full h-full -top-5 -right-5;
+}
+
+.card{
+    @apply flex mx-10 mb-5;
+}
+
+.pcard{
+    @apply relative top-5 ml-3 font-bold tracking-wide;
+}
+.spancard{
+    @apply text-gray-400 font-normal;
+}
+.imgcard{
+    @apply w-24 h-24 object-cover rounded-full;
+}
