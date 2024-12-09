@@ -21,3 +21,17 @@
 .imgcard{
     @apply w-24 h-24 object-cover rounded-full;
 }
+
+/* page2 */
+.spanimg{
+    @apply absolute top-0 right-0 bg-primary text-white py-1 px-2;
+}
+.card2{
+    @apply bg-white shadow-lg rounded-md w-full h-full mb-8 flex flex-col overflow-hidden;
+}
+.h5card{
+    @apply tracking-wider font-medium text-xl text-center py-6;
+}
+.button{
+    @apply w-5/6 mx-auto my-8 border-primary border-2 rounded-md bg-white text-primary text-center hover:bg-primary hover:text-white ease-out;
+}
