@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portfolio</title>
 </head>
-<body>
-    <h1 class="bg-red-300">hello world</h1>
+<body class="z-30">
+    <!--header-->
+    <header>
+        <div class="container min-h-screen fixed top-0 left-0 duration-75 ease-linear mt-6">
+            <nav class="flex justify-between items-center backdrop-blur-md relative top-0">
+                <span class="font-bold text-2xl text-blue-600 ml-10">Ivana</span>
+                <ul>
+                    <li class="inline-block ml-5 border-b-2 border-blue-600 text-blue-500"><a href="#">Home</a></li>
+                    <li class="inline-block ml-5 hover:text-blue-500 hover:border-b-2 border-blue-500"><a href="#">About me</a></li>
+                    <li class="inline-block ml-5"><a href="#">Skills</a></li>
+                    <li class="inline-block ml-5"><a href="#">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="flex justify-between items-center min-h-screen max-w-full ml-20 mt-10">
+           
+                <div class="flex flex-col mr-5">
+                    <a href="#"><i class='bx bxl-facebook-circle scale-150 text-blue-600 mb-3'></i></a>
+                    <a href="#"><i class='bx bxl-instagram scale-150 text-blue-600 mb-3'></i></a>
+                    <a href="#"><i class='bx bxl-github scale-150 text-blue-600 mb-3'></i></a>
+                </div>
+
+                <div class="mr-4">
+                    <h2 class="text-6xl tracking-wide font-medium m-2">Hi, i am ivana</h2>
+                    <h3 class="text-3xl m-2">Front-end developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, error beatae cumque placeat, temporibus voluptatum perferendis quis ea debitis tempora enim, asperiores praesentium nisi autem aspernatur iusto deleniti tempore similique.</p>
+                    <button class="border-2 border-blue-600 bg-white text-blue-600 p-2 m-3 rounded-lg cursor-pointer hover:border-transparent duration-100 ease-in-out hover:bg-blue-600 hover:text-white">contact me</button>
+                </div>
+           
+            <div class="ml-20">
+                <img src="./img/image.jpg" alt="" class="w-3/4 h-1/4  rounded-full">
+            </div>
+        </section>
+   </header>
+
+   
+    <!--About section-->
+        <section>
+            <div class="flex justify-center items-center w-full h-screen p-20">
+                <div class="w-full h-2/3">
+                    <img src="./img/image.jpg" alt="" class="hover:shadow-xl hover:shadow-blue-600 rounded-full object-cover">
+                </div>
+
+                <div class="m-10">
+                    <h3 class="text-4xl font-medium">I am ivana</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, consectetur mollitia recusandae voluptates sed sit, commodi reprehenderit ipsum natus, laudantium ipsam? Corporis sed error beatae neque earum obcaecati alias. Perspiciatis, nulla corporis. Magni animi nobis vero veritatis quos laudantium deleniti expedita atque odit quia, vel sapiente at doloribus facilis. Perferendis sed eveniet similique fugit amet quis consequatur nemo nostrum dolor!</p>
+                </div>
+            </div>
+        </section>
 </body>
 </html>

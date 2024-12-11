@@ -109,7 +109,7 @@
 }
 
 /*
-! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -592,10 +592,6 @@ video {
   z-index: 50;
 }
 
-.row-span-2{
-  grid-row: span 2 / span 2;
-}
-
 .m-10{
   margin: 2.5rem;
 }
@@ -693,48 +689,20 @@ video {
   height: 2.5rem;
 }
 
+.h-4\/5{
+  height: 80%;
+}
+
 .h-40{
   height: 10rem;
-}
-
-.h-60{
-  height: 15rem;
-}
-
-.h-full{
-  height: 100%;
 }
 
 .h-96{
   height: 24rem;
 }
 
-.h-1{
-  height: 0.25rem;
-}
-
-.h-1\/2{
-  height: 50%;
-}
-
-.h-8{
-  height: 2rem;
-}
-
-.h-80{
-  height: 20rem;
-}
-
-.h-11{
-  height: 2.75rem;
-}
-
-.h-4{
-  height: 1rem;
-}
-
-.h-4\/5{
-  height: 80%;
+.h-full{
+  height: 100%;
 }
 
 .min-h-full{
@@ -799,14 +767,6 @@ video {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-rows-3{
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
-.grid-rows-2{
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -988,12 +948,6 @@ video {
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-lg{
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
