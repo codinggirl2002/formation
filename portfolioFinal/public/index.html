@@ -5,49 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+   
+    <title>Portfolio</title>
 </head>
-<body class="bg-black">
+<body class="dark:bg-black scrollbar scrollbar-thumb-primary">
     <!--navbar-->
     <nav class="py-2">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!--logo-->
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-white text-2xl font-bold">Ivana <span class="text-primary">Teki</span></span>
+                    <span class="dark:text-white text-2xl font-bold">Ivana <span class="text-primary">Teki</span></span>
                 </div>
 
                 <!--links-->
-                <div class="hidden sm:block ml-auto">
+                <div class="hidden sm:block ml-auto navbar">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#home" class="text-primary underline px-3 py-2 text-sm font font-medium">Home</a>
-                        <a href="#skills" class="text-white hover:underline hover:text-primary px-3 py-2 text-sm font font-medium">Skills</a>
-                        <a href="#project" class="text-white hover:underline  hover:text-primary px-3 py-2 text-sm font font-medium">Projects</a>
+                        <a href="#skills" class="dark:text-white hover:underline hover:text-primary px-3 py-2 text-sm font font-medium">Skills</a>
+                        <a href="#project" class="dark:text-white hover:underline  hover:text-primary px-3 py-2 text-sm font font-medium">Projects</a>
                         <a href="#contact" class="btn-primary">Contact</a>
+                        <span>
+                            <i class='bx bxs-sun dark:text-white sun cursor-pointer text-2xl hidden dark:block relative top-1 left-2'></i>
+                            <i class='bx bxs-moon dark:text-white moon cursor-pointer text-2xl dark:hidden relative top-1 left-2'></i>
+                        </span>
                     </div>
                 </div>
 
                 <!--mobile menu-->
-                <div class="sm:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="text-white hover:text-primary focus:outline-none" aria-label="togglr-menu">
+                <div class="sm:hidden flex items-center menu">
+                    <button id="mobile-menu-btn" type="button" class="dark:text-white hover:text-primary focus:outline-none" aria-label="togglr-menu">
                         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden sm:hidden">
+        <div id="mobile-menu" class="hidden sm:hidden mobile-menu">
             <div class="px-2 py-2 pb-3 space-y-3">
-                <a href="#" class="text-white hover:underline block px-1 py-2 text-base font-medium">Home</a>
-                <a href="#" class="text-white hover:underline block px-1 py-2 text-base font-medium">Skills</a>
-                <a href="#" class="text-white hover:underline block px-1 py-2 text-base font-medium">Projects</a>
-                <a href="#" class="text-white hover:underline block px-1 py-2 text-base font-medium">Contact</a>
+                <a href="#" class="dark:text-white hover:underline block px-1 py-2 text-base font-medium">Home</a>
+                <a href="#" class="dark:text-white hover:underline block px-1 py-2 text-base font-medium">Skills</a>
+                <a href="#" class="dark:text-white hover:underline block px-1 py-2 text-base font-medium">Projects</a>
+                <a href="#" class="dark:text-white hover:underline block px-1 py-2 text-base font-medium">Contact</a>
             </div>
         </div>
     </nav>
     <!--end navbar-->
 
     <!--Home section-->
-    <section id="home" class="text-white py-28">
+    <section id="home" class="dark:text-white pt-10 pb-28">
         <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
             <!--icons-->
             <div class="flex flex-col mr-5">
@@ -69,8 +74,8 @@
                 </div>
             </div>
             <!--picture-->
-            <div>
-                <img src="./img/picture.jpeg" alt="" class="">
+            <div class="hidden md:flex justify-start items-center w-2/5">
+                <img src="./img/img.png" alt="" class="max-w-xl">
             </div>
         </div>
     </section>
@@ -80,7 +85,7 @@
     <section id="skills">
         <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="block md:flex items-start justify-between">
-                <h2 class="text-white text-3xl lg:text-5xl font-bold mb-2 w-full md:w-1/2 lg:w-3/5">
+                <h2 class="dark:text-white text-3xl lg:text-5xl font-bold mb-2 w-full md:w-1/2 lg:w-3/5">
                     A little list of of techs that i use
                 </h2>
 
@@ -89,7 +94,7 @@
                         <hr class="w-14 border-t-2 border-primary mr-4">
                         <h6 class="text-primary font-bold text-xl mr-4">Skills</h6>
                     </div>
-                    <p class="mt-2 text-gray-500">As a junior a list it's not far but here is the languages thet i commonly use</p>
+                    <p class="mt-2 text-gray-500">As a junior a list it's not far but here is the languages that i commonly use</p>
                 </div>
             </div>
 
@@ -131,7 +136,7 @@
                         <hr class="w-14 border-t-2 border-primary mr-4">
                         <h6 class="text-primary font-bold text-xl mr-4">Projects</h6>
                     </div>
-                    <h3 class="text-white text-3xl lg:text-5xl font-bold mb-2 md:w-3/4 mt-4">Some little pages that i create</h3>
+                    <h3 class="dark:text-white text-3xl lg:text-5xl font-bold mb-2 md:w-3/4 mt-4">Some little pages that i create</h3>
                 </div>
             </div>
 
@@ -140,25 +145,25 @@
                     <div class="relative h-full ">
                         <img src="./img/site4.PNG" alt="" class="img">
                     </div>
-                    <h5 class="h5-img">project with html and css</h5>
+                    <h5 class="h5-img">project with html and tailwindcss</h5>
                 </div>
                 <div class="container-img">
                         <div class="relative h-full">
                             <img src="./img/site2.PNG" alt="" class="img">
                         </div>
-                        <h5 class="h5-img">project with html and css</h5>
+                        <h5 class="h5-img">project with html and tailwindcss</h5>
                 </div>
                 <div class="container-img">
                         <div class="relative h-full">
                             <img src="./img/site3.PNG" alt="" class="img">
                         </div>
-                        <h5 class="h5-img">project with html and css</h5>
+                        <h5 class="h5-img">project with html and tailwindcss</h5>
                 </div>
                 <div class="container-img">
                     <div class="relative h-full">
                         <img src="./img/site1.PNG" alt="" class="img">
                     </div>
-                    <h5 class="h5-img">project with html and css</h5>
+                    <h5 class="h5-img">project with html and tailwindcss</h5>
                 </div>
             </div>
         </div>
@@ -170,7 +175,7 @@
         <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="block md:flex items-center justify-between">
                 <div>
-                    <h4 class="text-white text-3xl lg:text[38px] font-bold mb-2"> Have some questions?</h4>
+                    <h4 class="dark:text-white text-3xl lg:text[38px] font-bold mb-2"> Have some questions?</h4>
 
                     <form action="" class="mt-20 block items-start">
                         <p class="text-gray-400 m-2 flex flex-col">
@@ -200,11 +205,11 @@
     <footer class="pt-8 pb-6">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="md:flex justify-between items-center">
-                <span class="text-white text-[28px] font-bold">Ivana <span class="text-primary">Teki</span></span>
+                <span class="dark:text-white text-[28px] font-bold">Ivana <span class="text-primary">Teki</span></span>
                 <div class="w-full mt-10 md:mt-0 space-y-5 md:w-96 justify-between md:space-y-0 md:flex">
                     <div>
-                        <h6 class="text-xl text-white font-semibold mb-6">Informations</h6>
-                        <ul class="text-gray-400 space-y-3">
+                        <h6 class="text-xl dark:text-white font-semibold mb-6">Informations</h6>
+                        <ul class="dark:text-gray-400 text-gray-600 space-y-3">
                             <li class="hover:underline"><a href="#"><i class='bx bxs-phone text-xl text-primary'></i> 697 560 242</a></li>
                             <li class="hover:underline"><a href="#"><i class='bx bxs-envelope text-xl text-primary'></i> ivanaazanfack@gmail.com</a></li>
                             <li class="hover:underline"><a href="#"> <i class='bx bxs-location-plus text-xl text-primary'></i> Yaounde, Cameroun</a></li>
@@ -212,8 +217,8 @@
                     </div>
 
                     <div>
-                        <h6 class="text-xl text-white font-semibold mb-6">Social Medias</h6>
-                        <ul class="text-gray-400 space-y-3">
+                        <h6 class="text-xl dark:text-white font-semibold mb-6">Social Medias</h6>
+                        <ul class="dark:text-gray-400 text-gray-600 space-y-3">
                             <li class="hover:underline"><a href="#">facebook</a></li>
                             <li class="hover:underline"><a href="#">instagram</a> </li>
                             <li class="hover:underline"><a href="#">github</a></li>
@@ -222,13 +227,22 @@
                 </div>
             </div>
 
-            <hr class="h-[2px] w-full bg-gray-200 mt-16">
-            <div class="flex mt-4 items-start justify-between text-white">
+            <hr class="h-[2px] w-full dark:bg-gray-200 bg-gray-500 mt-16">
+            <div class="flex mt-4 items-start justify-between dark:text-white">
                 <span>Develop by <span class="text-primary">Ivana Teki</span></span>
                 <span>Copyrigth&copy;2024</span>
             </div>
         </div>
     </footer>
     <!--end footer-->
+
+    <script src="./index.js"></script>
+    <script>
+        const menu =document.querySelector(".menu")
+        const mobile_menu =document.querySelector(".mobile-menu")
+        menu.addEventListener('click',()=>{
+            mobile_menu.classList.toggle('block')
+        })
+    </script>
 </body>
 </html>

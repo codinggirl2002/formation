@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/*.html","./src/**/*.{html,js}"],
+  content: ["./public/*.html","./public/*.js","./src/**/*.{html,js}"],
   theme: {
     extend: {
       colors: {
@@ -11,6 +11,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [ require('tailwind-scrollbar'),],
+  darkMode: "class",
 }
 
