@@ -3,25 +3,12 @@
 const sunIcon = document.querySelector(".sun");
 const moonIcon = document.querySelector(".moon");
 
-//theme vars
-const userTheme = localStorage.getItem("theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
 //icon toggling
  const iconToggle = ()=>{
     moonIcon.classList.toggle("display-none");
     sunIconIcon.classList.toggle("display-none");
  }
 
-//initial themes check
-const themeChecks =() =>{
-    if (userTheme === "dark" || (!userTheme && systemTheme)) {
-        document.documentElement.classList.add("dark");
-        moonIcon.classList.add("display-none");
-        return;
-    }
-    sunIcon.classList.add("display-none");
-}
 
 //manual theme switch
 const themeSwitch = () =>{
@@ -44,5 +31,22 @@ moonIcon.addEventListener("click", ()=>{
     themeSwitch();
 });
 
-//invoke theme check on initiel load
-themeChecks();
+
+
+//invoke theme check on initial load
+/*themeChecks();*/
+
+//theme vars
+/*const userTheme = localStorage.getItem("theme");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+*/
+//initial themes check
+/*const themeChecks =() =>{
+    if (userTheme === "dark" || (!userTheme && systemTheme)) {
+        document.documentElement.classList.add("dark");
+        moonIcon.classList.add("display-none");
+        return;
+    }
+    sunIcon.classList.add("display-none");
+}
+*/
