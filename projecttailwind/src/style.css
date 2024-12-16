@@ -35,3 +35,9 @@
 .button{
     @apply w-5/6 mx-auto my-8 border-primary border-2 rounded-md bg-white text-primary text-center hover:bg-primary hover:text-white ease-out;
 }
+
+/* page3 */
+
+.btn3{
+   @apply bg-primary3 text-white py-1 px-4 mr-4 rounded-md;
+}
