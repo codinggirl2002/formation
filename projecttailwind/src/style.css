@@ -41,7 +41,7 @@
 }
 
 .menu-item{
-    @apply rounded-md overflow-hidden min-h-auto w-[400px] bg-white;
+    @apply rounded-md overflow-hidden min-h-full w-[400px] bg-white;
 }
 
 .text-item{

@@ -109,7 +109,7 @@
 }
 
 /*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1157,7 +1157,7 @@ video {
 }
 
 .menu-item{
-  height: auto;
+  min-height: 100%;
   width: 400px;
   overflow: hidden;
   border-radius: 0.375rem;
