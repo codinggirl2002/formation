@@ -14,8 +14,12 @@ module.exports = {
         primary: '#10b981',
         secondary: '#f59e0b',
         primary3:  '#f59e0b',
+        primary32: '#b97b13',
         secondary3: '#f8fafc',
       },
+      screens: {
+        mpc: '766px',
+      }
     },
   },
   plugins: [],

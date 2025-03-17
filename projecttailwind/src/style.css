@@ -25,7 +25,7 @@
     @apply absolute top-0 right-0 bg-primary text-white py-1 px-2;
 }
 .card2{
-    @apply bg-white shadow-lg rounded-md w-full h-full mb-8 flex flex-col overflow-hidden;
+    @apply bg-white shadow-lg rounded-md w-full mb-8 flex flex-col overflow-hidden;
 }
 .h5card{
     @apply tracking-wider font-medium text-xl text-center py-6;
@@ -37,11 +37,11 @@
 /* page3 */
 
 .btn3{
-   @apply bg-primary3 text-white py-1 px-4 mr-4 rounded-md;
+   @apply bg-primary3 text-white py-1 px-4 mr-4 rounded-md hover:bg-primary32 ease-in duration-75;
 }
 
 .menu-item{
-    @apply rounded-md overflow-hidden min-h-full w-[400px] bg-white;
+    @apply rounded-md overflow-hidden min-h-full w-[400px] bg-white mt-14 md:mt-0;
 }
 
 .text-item{
