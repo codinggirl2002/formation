@@ -4,7 +4,7 @@
 @section('content')
     {{-- @dd(Auth::user()) --}}
     <div class="bg-white shadow-md rounded px-8 py-4 w-full max-w-md">
-        <h1 class="text-4xl font-bold text-center text-green-600 mb-6">Inscription</h1>
+        <h1 class="text-4xl font-bold text-center text-green-600 mb-6">Mise a jour </h1>
         <form method="POST">
             @csrf
             <!-- Nom complet -->
@@ -65,7 +65,7 @@
             <div class="mb-4">
                 <span class="block text-gray-700 mb-2">Je suis :</span>
                 <div class="flex items-center">
-                    <input {{ $user->role == 'donor' ? 'checked' : '' }} type="radio" name="role" value="donor" id="role_donor" class="mr-2" required>
+                    <input {{ $user->role == 'donor' ? 'checked' : '' }} type="radio" name="role" value="donor" id="role_donor" class="mr-2">
                     <label for="role_donor" class="text-gray-700">Donateur</label>
                 </div>
                 <div class="flex items-center mt-2">
@@ -81,6 +81,7 @@
             <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition font-bold">
                 Modifier
             </button>
+            <a href="{{route('auth.dashboarduser')}}" class="text-red-500 text-center font-bold text-xl py-4 mx-auto mt-2">Retour</a>
         </form>
     </div>
 @endsection    

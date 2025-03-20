@@ -53,4 +53,9 @@ class User extends Authenticatable
         return $this->role === 'beneficiary';
     }
 
+    //pour specifier qu'un utilisateur peut effectuer plusieurs donations
+    public function donations()
+    {
+       return $this->hasMany(Donation::class);
+    }
 }

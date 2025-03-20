@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\donationController;
 use GuzzleHttp\Promise\Create;
 use Termwind\Components\Dd;
 use App\Models\AllUsers;
@@ -31,27 +32,26 @@ Route::get('/contact', function () {
     return view('others.contact');
 });
 
-//logs
+//Routes pour les operations de crud d'un utilisateur et son dashboard
 
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('auth.register');
-Route::post('/register', [AuthController::class, 'register']);
-//route vers le dashboard user
-// Route::match(['get', 'post'], '/dashboard', function () {
-//     return view('auth.dashboard');
-// })->name('dashboard');
+Route::name('auth.')->group(function () {
+    Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');//afficher le formulaire d'inscription
+    Route::get('/{user}/edit', [AuthController::class, 'edit']) -> name('edit'); //pour afficher le formulaire de maj
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); //afficher le formulaire de connexion
+    Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');  //pour se deconnecter
+    Route::get('/{user}/delete', [AuthController::class, 'delete'])->middleware(['auth'])->name('delete');//pour afficher la page de suppression d'un utilisateur
+    Route::match(['get', 'post'], '/dashboarduser', [DashboardController::class, 'index']
+    )->name('dashboarduser');//pour acceeder au dashboard utilisateur
 
-Route::match(['get', 'post'], '/dashboard', [DashboardController::class, 'index']
-)->name('dashboard');
+});
 
 
-Route::get('/{user}/edit', [AuthController::class, 'edit']) -> name('auth.edit'); //pour afficher le formulaire de maj
+
+Route::post('/register', [AuthController::class, 'register']); //pour gerer le traitement de l'inscription
 Route::post('/{user}/edit', [AuthController::class, 'update']); //pour gerer le traitement d la maj
+Route::post('/login', [AuthController::class, 'login']); //pour gerer le traitement de le connxion
+Route::delete('/{user}', [AuthController::class, 'destroy'])->name('destroy');//pour supprimer un utilisateur
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('auth.login');
-Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
-Route::post('/login', [AuthController::class, 'login']);
 //dons 
 
-Route::get('/baseauth', function () {
-    return view('auth.baseauth');
-});
+Route::middleware(['auth'])->resource('donations',donationController::class);

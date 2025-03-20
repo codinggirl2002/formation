@@ -33,7 +33,7 @@ class AuthController extends Controller
 
        Auth::login($user);
 
-        return redirect()->route('dashboard', ['name'=> $user->name, 'id' =>$user->id])->with('success', 'Inscription réussie !');
+        return redirect()->route('auth.dashboarduser', ['name'=> $user->name, 'id' =>$user->id])->with('success', 'Inscription réussie !');
     }
 
 
@@ -50,7 +50,7 @@ class AuthController extends Controller
         $pwd = $datas['password'];
         $datas['password'] = Hash::make($pwd);
         $user -> update($datas);
-        return redirect()->route('dashboard', ['name'=> $user->name, 'id' =>$user->id])->with('success', 'Mise a jour des informations réussie !');
+        return redirect()->route('auth.dashboarduser', ['name'=> $user->name, 'id' =>$user->id])->with('success', 'Mise a jour des informations réussie !');
     }
 
     // Affiche le formulaire de connexion
@@ -64,7 +64,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended(route('dashboard'));
+            return redirect()->intended(route('auth.dashboarduser'));
         }
 
         return to_route('auth.login')->withErrors([
@@ -76,6 +76,20 @@ class AuthController extends Controller
     public function logout(){
         Auth::logout();
         return to_route('auth.login');
+    }
+
+
+    //supprimer son compte
+    public function delete(User $user){
+        return view('auth.deleteuser', [
+            'user' => $user
+        ]);
+    }
+    public function destroy(User $user)
+    {
+        $name = $user->name;
+        $user->delete();
+        return redirect()->route('auth.dashboarduser')->with('success',"le compte de l'utilisateur $name a bien ete supprime!");
     }
 }
 
