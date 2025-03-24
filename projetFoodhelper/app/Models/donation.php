@@ -15,4 +15,18 @@ class donation extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    //pour specifier qu'undon peut etre demande par plusieurs utilisateurs
+    /*public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }*/
+
+    // Relation many-to-many avec les bénéficiaires (via la table 'demandes')
+    public function beneficiaries()
+    {
+        return $this->belongsToMany(User::class, 'demandes', 'donation_id', 'user_id')
+                    ->withPivot('type_aliment', 'date', 'quantite', 'localisation')
+                    ->withTimestamps();
+    }
 }

@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\demandeController;
+use App\Http\Controllers\donation_userController;
 use App\Http\Controllers\donationController;
 use GuzzleHttp\Promise\Create;
 use Termwind\Components\Dd;
@@ -52,6 +54,14 @@ Route::post('/{user}/edit', [AuthController::class, 'update']); //pour gerer le 
 Route::post('/login', [AuthController::class, 'login']); //pour gerer le traitement de le connxion
 Route::delete('/{user}', [AuthController::class, 'destroy'])->name('destroy');//pour supprimer un utilisateur
 
-//dons 
+//dons  et demandes
 
 Route::middleware(['auth'])->resource('donations',donationController::class);
+Route::get('/donationslist', [donationController::class, 'donationList'])->name('donations.list');
+Route::middleware(['auth'])->resource('demandes', demandeController::class);
+Route::get('/demandes/create/{donationId}', [demandeController::class, 'create'])->name('demandes.create');
+Route::middleware('auth')->group(function () {
+    Route::delete('/demandes/{donationId}', [demandeController::class, 'destroy'])->name('demandes.destroy');
+    Route::get('/demandes/{donationId}/edit', [demandeController::class, 'edit'])->name('demandes.edit');
+    Route::put('/demandes/{donationId}', [demandeController::class, 'update'])->name('demandes.update');
+});

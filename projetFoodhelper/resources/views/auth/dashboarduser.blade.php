@@ -21,20 +21,20 @@
                             </button>
                         </div>
                     {{-- vue d'ensemble de la boite modale --}}
-                        <div style="backdrop-filter: blur(50%);" id="modalContent" class="fixed backdrop-blur-2xl inset-0 bg-gray-900 opacity-40 flex items-center justify-center hidden">
+                        <div id="modalContent" class="fixed backdrop-blur inset-0  flex items-center justify-center hidden">
                              {{-- contenu de la boite modale --}}
-                             <div class="bg-white rounded-lg w-11/12 md:w-1/2 p-6 relative">
+                             <div class="bg-white rounded-lg w-11/12 mx-2 md:w-1/2 p-6 relative">
                                 <div class="flex flex-col ">
-                                    <a href="{{route('auth.edit', $user)}}" class="text-2xl font-bold text-green-700">Modifier mes informations</a>
+                                    <a href="{{route('auth.edit', $user)}}" class="text-md md:text-2xl font-bold text-green-600 hover:underline">Modifier mes informations</a>
                                     @if ($user->isDonateur())
-                                      <a href="{{route('donations.index')}}" class="text-2xl font-bold text-blue-700">Historique de mes dons.</a>
+                                      <a href="{{route('donations.index')}}" class="text-md md:text-2xl font-bold text-blue-600 hover:underline">Historique de mes dons</a>
                                     @elseif ($user->isBeneficiaire()) 
-                                      <a href="" class="text-2xl font-bold text-blue-700">Historique des dons recus.</a>
+                                      <a href="{{route('demandes.index')}}" class="text-md md:text-2xl font-bold text-blue-600 hover:underline">Historique de mes demandes</a>
                                     @endif
-                                    <a href="{{route('auth.delete', $user)}}" class="text-2xl font-bold text-red-700">Supprimer mon compte</a>
+                                    <a href="{{route('auth.delete', $user)}}" class="text-md md:text-2xl font-bold text-red-600 hover:underline">Supprimer mon compte</a>
                                 </div>                                
                                  {{-- bouton de fermeture de la boite modale --}}
-                                  <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold">close</button>
+                                  <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-md md:text-2xl font-bold">Fermer</button>
                              </div>
                         </div>
                     @auth
@@ -73,7 +73,7 @@
                     <div class="mt-6 p-4 bg-blue-100 border border-blue-400 rounded-lg">
                         <h3 class="text-xl font-semibold text-blue-800">Espace Bénéficiaire </h3>
                         <p class="text-gray-700 mt-2">Vous pouvez voir les dons disponibles et demander de l'aide.</p>
-                        <a href="#" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg">
+                        <a href="{{route('donations.list')}}" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg">
                             Voir les dons disponibles
                         </a>
                     </div>

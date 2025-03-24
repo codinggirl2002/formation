@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\donationFormRequest;
+use App\Http\Requests\filterRequest;
 use App\Models\donation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -101,5 +102,31 @@ class donationController extends Controller
         $donation->delete();
         return redirect()->route('donations.index')->with('success','votre don a bien ete supprime!');
 
+    }
+
+    //to list all the donations
+    public function donationList(filterRequest $request){
+        $query = donation::query();
+
+        // Filtre par localisation (si renseigné)
+        if ($request->filled('localisation')) {
+            $query->where('localisation', 'like', '%' . $request->localisation . '%');
+        }
+
+        // Filtre par quantité minimale (si renseigné)
+        if ($request->filled('min_quantity')) {
+            $query->where('quantite', '>=', $request->min_quantity);
+        }
+        // Filtre par type d'aliment (si renseigné)
+        if ($request->filled('type_aliment')) {
+            $query->where('type_aliment', 'like', '%' . $request->type_aliment . '%');
+        }
+
+        //$donations = $query->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('demandes.alldonation', [
+            'donations' => $query->orderBy('created_at' ,'desc')->paginate(6), 
+            'input' =>$request->validated() 
+        ]);
     }
 }
