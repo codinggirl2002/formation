@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-100 bg-cover bg-center  min-h-screen">
     <div class="bg-green-600 w-full h-20 flex justify-between items-center px-4">
-        <span class="font-bold text-white text-2xl">FOODHELPER</span>
+        <span class="font-bold text-white text-2xl"><a href="{{route('home')}}">FOODHELPER</a></span>
         <ul class="flex">
             <li class="mr-5 py-1 text-white font-semibold"> contactez nous</li>
             <li class="border-[1px] border-white px-2 py-1 rounded-xl font-semibold text-white hover:bg-white hover:text-green-600 transition ease-out duration-500"> 

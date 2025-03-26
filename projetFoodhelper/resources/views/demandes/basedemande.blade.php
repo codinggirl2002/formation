@@ -9,8 +9,11 @@
     @vite('resources/css/app.css')
 </head>
 <body class="h-screen">
-    <nav class="flex justify-between items-center bg-white shadow-md shadow-blue-200 px-6 py-4">
-        <span class="font-bold text-blue-600 text-2xl">FOODHELPER</span>
+    <nav class="flex justify-between items-center bg-white shadow-md shadow-blue-200 px-6 py-2">
+        {{-- <span class="font-bold text-blue-600 text-2xl">FOODHELPER</span> --}}
+        <span>
+            <a href="{{route('home')}}"><img class="h-14 w-28 pb-0.5" src="{{asset('img/logo FOODHELPER bleu.png')}}" alt="logo"></a>
+        </span>
         <div>
             @php
                 $route_name = request()->route()->getName()

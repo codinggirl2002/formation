@@ -1,105 +1,94 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sauvetage & Redistribution Alimentaire</title>
-    @vite('resources/css/app.css') 
-</head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex-shrink-0">
-                        <img class="h-8 w-auto" src="/images/logo.png" alt="Logo du site">
-                    </a>
-                    <nav class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="/" class="border-green-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Accueil
-                        </a>
-                        <a href="/about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            À propos
-                        </a>
-                        <a href="/contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Contact
-                        </a>
-                    </nav>
-                </div>
-                <div class="hidden sm:flex sm:items-center">
-                    <a href="/login" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-                        Se connecter
-                    </a>
-                    <a href="/register" class="ml-4 bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700">
-                        S'inscrire
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Section Hero -->
-    <main class="mt-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-                Ensemble, sauvons l'alimentation
-            </h1>
-            <p class="mt-4 text-xl text-gray-600">
-                Rejoignez notre plateforme pour redistribuer les invendus et lutter contre le gaspillage alimentaire.
-            </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="/register" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
-                    S'inscrire
-                </a>
-                <a href="/donate" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-green-600 bg-white hover:bg-gray-100">
-                    Faire un don
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <!-- Section Fonctionnalités -->
-    <section class="mt-16 bg-gray-100 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-3xl font-extrabold text-gray-900">
-                    Comment ça marche ?
-                </h2>
-                <p class="mt-4 text-lg text-gray-600">
-                    Un processus simple pour collecter, trier et redistribuer les invendus alimentaires aux associations et aux personnes dans le besoin.
+@extends('base')
+@section('title', 'home page')
+@section('content')
+    <!-- Hero Section -->
+        <section class="relative bg-cover bg-center" style="background-image: url('{{ asset('img/acceuil.jpg') }}');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="container mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white">
+                <h1 class="md:text-9xl text-6xl font-bold mb-4" style="font-family: 'Tangerine','Montserrat',sans-serif;">Ensemble, sauvons la nourriture</h1>
+                <p class="md:text-4xl text-2xl mb-8 max-w-2xl" style="font-family: 'Tangerine','Montserrat',sans-serif;">
+                    Rejoignez notre mission pour récupérer et redistribuer les invendus alimentaires, et lutter contre le gaspillage.
                 </p>
+                <a href="#recentdonations" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded transition">
+                    Voir les dons disponibles
+                </a>
             </div>
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-bold text-green-600">Collecte</h3>
-                    <p class="mt-2 text-gray-600">
-                        Les commerces et organisations nous envoient leurs invendus alimentaires.
-                    </p>
+        </section>
+
+    <!-- How It Works Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Comment ça marche ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded shadow text-center">
+                        <img src="{{ asset('img/pexels-julia-m-cameron-6994944.jpg') }}" alt="Collecte" class="w-full  h-72 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Collecte</h3>
+                        <p class="text-gray-600">Les partenaires récupèrent les invendus auprès des commerces et restaurants.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow text-center">
+                        <img src="{{ asset('img/pexels-julia-m-cameron-6995212.jpg') }}" alt="Tri" class="w-full  h-72 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Tri</h3>
+                        <p class="text-gray-600">Les produits sont triés et préparés pour être redistribués.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow text-center">
+                        <img src="{{ asset('img/pexels-julia-m-cameron-6995221.jpg') }}" alt="Redistribution" class="w-full  h-72 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Redistribution</h3>
+                        <p class="text-gray-600">Les aliments sont distribués aux associations et bénéficiaires.</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-bold text-green-600">Tri</h3>
-                    <p class="mt-2 text-gray-600">
-                        Nous sélectionnons et trions les produits pour assurer leur qualité.
-                    </p>
+            </div>
+        </section>
+   
+        <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center text-gray-800 my-8">Statistiques</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-4">
+                <div>
+                    <div class="text-4xl font-bold text-green-600">{{ $totalDonations ?? 0 }}</div>
+                    <div class="text-lg text-gray-700 mt-2">Dons enregistrés</div>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-bold text-green-600">Redistribution</h3>
-                    <p class="mt-2 text-gray-600">
-                        Les produits sont redistribués aux associations et aux bénéficiaires.
-                    </p>
+                <div>
+                    <div class="text-4xl font-bold text-green-600">{{ $totalBeneficiaries ?? 0 }}</div>
+                    <div class="text-lg text-gray-700 mt-2">Bénéficiaires</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-green-600">{{ $foodSaved ?? '0' }} kg</div>
+                    <div class="text-lg text-gray-700 mt-2">Nourriture sauvée</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="text-center text-gray-600">
-                &copy; {{ date('Y') }} Sauvetage Alimentaire. Tous droits réservés.
+    <!-- Recent Donations Section -->
+    <section class="py-10 bg-white" id="recentdonations">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 my-8">Dons Récents</h2>
+            @if($recentDonations->count())
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+                @foreach($recentDonations as $donation)
+                <div class="bg-gray-50 rounded shadow">
+                    <img src=" storage/{{$donation->image}} " alt="" class="rounded w-full h-68 max-w-full  object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-600 mb-2">{{ $donation->type_aliment }}</h3>
+                        <p class="text-gray-700 mb-2">{{ Str::limit($donation->description, 100) }}</p>
+                        <p class="text-sm text-gray-500">Quantité : {{ $donation->quantite }} kgs</p>
+                        <p class="text-sm text-gray-500">Localisation : {{ $donation->localisation }}</p>
+                        <a href="{{route('auth.register')}}" class="text-blue-600 hover:underline mt-4 inline-block">
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+                @endforeach
             </div>
+            <div class="mt-6">
+                {{ $recentDonations->links() }}
+            </div>
+            @else
+            <p class="text-center text-gray-600">Aucun don n'est disponible pour le moment.</p>
+            @endif
         </div>
-    </footer>
-</body>
-</html>
+    </section>
+
+@endsection
+    

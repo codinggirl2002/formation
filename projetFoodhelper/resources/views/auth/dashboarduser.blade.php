@@ -9,9 +9,11 @@
 </head>
 <body class="bg-gray-100">
     <div>
-        <nav class="bg-white p-4 shadow-md">
+        <nav class="bg-white  pt-4 shadow-md">
             <div class="container mx-auto flex  justify-between">
-                <a href="#" class="text-xl font-bold p-2">FoodHelper</a>
+                <span>
+                    <a href="{{route('home')}}"><img class="h-14 w-28 pb-2.5" src="{{asset('img/logo FOODHELPER2.jpg')}}" alt="logo"></a>
+                </span>
                 <div class="flex">
                     <!-- Boite modale pour afficher les informations de l'utilisateur -->
                     {{-- bouton pour ouvrir la boite modale --}}

@@ -8,9 +8,11 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
-        <nav class="bg-white p-4 shadow-md">
+        <nav class="bg-white px-4 pt-4 shadow-md">
             <div class="container mx-auto flex  justify-between">
-                <a href="#" class="text-xl font-bold p-2">FoodHelper</a>
+                <span>
+                    <a href="{{route('home')}}"><img class="h-14 w-28 pb-0.5" src="{{asset('img/logo FOODHELPER vert.png')}}" alt="logo"></a>
+                </span>
                 <div class="flex">
                     @auth
                         <form action="{{ route('auth.logout') }}" method="post">

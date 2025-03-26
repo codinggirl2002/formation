@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\demandeController;
 use App\Http\Controllers\donation_userController;
 use App\Http\Controllers\donationController;
+use App\Http\Controllers\homeController;
 use GuzzleHttp\Promise\Create;
 use Termwind\Components\Dd;
 use App\Models\AllUsers;
@@ -21,18 +22,17 @@ use App\Models\AllUsers;
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [homeController::class, 'index'])->name('home');
+
 
 //others pages
 Route::get('/about', function () {
     return view('others.about');
-});
+})->name('about');
 
 Route::get('/contact', function () {
     return view('others.contact');
-});
+})->name('contact');
 
 //Routes pour les operations de crud d'un utilisateur et son dashboard
 
