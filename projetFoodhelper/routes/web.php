@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -65,3 +67,40 @@ Route::middleware('auth')->group(function () {
     Route::get('/demandes/{donationId}/edit', [demandeController::class, 'edit'])->name('demandes.edit');
     Route::put('/demandes/{donationId}', [demandeController::class, 'update'])->name('demandes.update');
 });
+
+//administrateur
+Route::middleware(['auth'])->group(function () {
+   
+});
+
+
+// Routes d'authentification admin
+Route::prefix('admin')->group(function () {
+    // Afficher le formulaire de connexion
+    Route::get('/login', [adminController::class, 'showLoginForm'])->name('admin.login');
+    // Traiter la connexion
+    Route::post('/login', [adminController::class, 'login'])->name('admin.login.submit');
+    // Traiter la deconnexion
+    Route::post('/logout', [adminController::class, 'logout'])->name('admin.logout');
+    // Afficher le formulaire d'inscription
+    Route::get('/register', [adminController::class, 'showRegistrationForm'])->name('admin.register');
+    // Traiter l'inscription
+    Route::post('/register', [adminController::class, 'register'])->name('admin.register.submit');
+});
+
+// Dashboard protégé pour l'administrateur
+Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [adminController::class, 'index'])->name('admin.dashboardstats');
+    Route::get('/dashboard/gestionusers', [adminController::class, 'gestionusers'])->name('admin.dashboardgestionusers');
+    Route::get('/dashboard/gestiondons', [adminController::class, 'gestiondons'])->name('admin.dashboardgestiondons');
+    Route::get('/dashboard/gestiondemandes', [adminController::class, 'gestiondemandes'])->name('admin.dashboardgestiondemandes');
+});
+
+Route::get('/test-guards', function () {
+    return config('auth.guards');
+});
+
+
+// Route::get('/adminregister', [adminController::class, 'admincreate'])->name('adminregister');//afficher le formulaire d'inscription
+// Route::post('/adminregister', [adminController::class, 'adminregister']); //pour gerer le traitement de l'inscription
+// Route::get('/adminlogin', [adminController::class, 'showLoginForm'])->name('adminlogin'); //afficher le formulaire de connexion

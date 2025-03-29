@@ -43,16 +43,16 @@
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
             <h1 class="text-4xl font-bold text-center text-gray-800 my-8">Statistiques</h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-4">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-14">
+                <div class="bg-gray-100 py-14 border-b-green-600 border-b-[1px] rounded-lg">
                     <div class="text-4xl font-bold text-green-600">{{ $totalDonations ?? 0 }}</div>
                     <div class="text-lg text-gray-700 mt-2">Dons enregistrés</div>
                 </div>
-                <div>
+                <div class="bg-gray-100 py-14 border-b-green-600 border-b-[1px] rounded-lg">
                     <div class="text-4xl font-bold text-green-600">{{ $totalBeneficiaries ?? 0 }}</div>
                     <div class="text-lg text-gray-700 mt-2">Bénéficiaires</div>
                 </div>
-                <div>
+                <div class="bg-gray-100 py-14 border-b-green-600 border-b-[1px] rounded-lg">
                     <div class="text-4xl font-bold text-green-600">{{ $foodSaved ?? '0' }} kg</div>
                     <div class="text-lg text-gray-700 mt-2">Nourriture sauvée</div>
                 </div>
