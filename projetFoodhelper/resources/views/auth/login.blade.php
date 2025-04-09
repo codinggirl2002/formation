@@ -13,8 +13,8 @@
                 <label for="email" class="block text-gray-700">Email</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1" >
                 @error('email')
-                {{$message}}
-            @enderror
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Mot de passe -->
@@ -22,7 +22,7 @@
                 <label for="password" class="block text-gray-700">Mot de passe</label>
                 <input type="password" name="password" id="password" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1">
                 @error('password')
-                {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 

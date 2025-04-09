@@ -32,8 +32,7 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->type_aliment }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->date_limite }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->user->name }}</td>
-                            <td class="py-2 px-4  flex space-x-2 mt-4">
-                                <a href="{{ route('donations.edit', $donation->id) }}" class="px-3 py-1 mx-1.5 text-white bg-yellow-500 hover:bg-yellow-700 rounded ">Modifier</a>
+                            <td class="py-2 px-4  border-b-[1px] border-gray-300">
                                 <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Confirmer la suppression de ce don ?')">
                                     @csrf
                                     @method('DELETE')

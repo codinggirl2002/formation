@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\demandeController;
 use App\Http\Controllers\donation_userController;
@@ -32,9 +33,8 @@ Route::get('/about', function () {
     return view('others.about');
 })->name('about');
 
-Route::get('/contact', function () {
-    return view('others.contact');
-})->name('contact');
+Route::get('/contact', [contactController::class, 'contact'])->name('contact');
+Route::post('/contact', [contactController::class, 'envoyer']);
 
 //Routes pour les operations de crud d'un utilisateur et son dashboard
 
@@ -68,10 +68,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/demandes/{donationId}', [demandeController::class, 'update'])->name('demandes.update');
 });
 
-//administrateur
-Route::middleware(['auth'])->group(function () {
-   
-});
 
 
 // Routes d'authentification admin
@@ -96,11 +92,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard/gestiondemandes', [adminController::class, 'gestiondemandes'])->name('admin.dashboardgestiondemandes');
 });
 
-Route::get('/test-guards', function () {
-    return config('auth.guards');
-});
+// Route::get('/test-guards', function () {
+//     return config('auth.guards');
+// });
 
-
-// Route::get('/adminregister', [adminController::class, 'admincreate'])->name('adminregister');//afficher le formulaire d'inscription
-// Route::post('/adminregister', [adminController::class, 'adminregister']); //pour gerer le traitement de l'inscription
-// Route::get('/adminlogin', [adminController::class, 'showLoginForm'])->name('adminlogin'); //afficher le formulaire de connexion

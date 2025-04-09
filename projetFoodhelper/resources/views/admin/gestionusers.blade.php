@@ -27,11 +27,10 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $user->email }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $user->role ?? 'Utilisateur' }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">
-                                <a href="{{ route('auth.edit', $user->id) }}" class="text-blue-600 hover:underline">Modifier</a>
                                 <form action="{{ route('auth.delete', $user->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Supprimer cet utilisateur ?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-600 hover:underline">Supprimer</button>
+                                    <button type="submit" class="text-red-600 hover:underline font-bold">Supprimer</button>
                                 </form>
                             </td>
                         </tr>

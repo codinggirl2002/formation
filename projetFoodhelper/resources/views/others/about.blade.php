@@ -11,7 +11,7 @@
   <div class="my-30 md:px-20 px-10 mx-auto">
     <h1 class="md:text-5xl text-3xl text-center text-green-600 font-extrabold pb-10" style="font-family: 'Tangerine','Montserrat',sans-serif;">Apropos de FOODHELPER</h1>
     <p class="text-gray-500 text-center" style="font-family: 'Montserrat',sans-serif;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente nostrum laudantium hic, excepturi odio libero perspiciatis unde blanditiis laborum obcaecati, illum sunt quo neque nesciunt ullam reprehenderit voluptatibus velit tenetur delectus aut. Laborum illo, est, officiis quaerat excepturi corrupti minus cumque esse enim voluptatem ipsum rerum animi. Doloribus, blanditiis!
+      FOODHELPER est une initiative locale engagée dans la lutte contre le gaspillage alimentaire et la distribution de nourriture aux personnes dans le besoin. Notre équipe de bénévoles dévoués œuvre chaque jour pour améliorer la vie des habitants de notre communauté, en favorisant la solidarité et en renforçant les liens locaux.
     </p>
   </div>
 
@@ -21,8 +21,9 @@
                 <div  class="mr-16">
                     <h3 class="text-3xl text-green-600 pb-8 font-semibold">Notre mission</h3>
                     <p class="text-gray-500 mb-4">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, dolore molestiae inventore illo laborum ipsam maxime iure consectetur sunt? Est consequatur possimus earum, accusamus iure autem. Error, reprehenderit aliquam. Numquam, tenetur. Ducimus saepe beatae minima iure vitae accusamus esse tempore consequuntur culpa? Debitis quibusdam temporibus rerum numquam quasi sint facilis tempore iusto officiis aliquid nam ipsum dignissimos dolorum, provident ad error. Explicabo nostrum, laboriosam expedita optio ratione dolor, sint facilis quae quidem officiis velit quam accusantium vel ipsam, beatae dolore rerum omnis! Illum recusandae aperiam odit eligendi, ipsam, reprehenderit pariatur repudiandae voluptatum exercitationem, ipsa at saepe nam fugit aspernatur mollitia quae laudantium aut consequatur beatae nostrum quis veritatis! Molestiae suscipit sequi dignissimos itaque sit distinctio illum quidem quae temporibus, quam quis recusandae dolorem.
-                    </p>
+                      Chez <span class="text-green-600"> FOODHELPER</span>, notre mission est de lutter contre le gaspillage alimentaire tout en aidant ceux qui en ont le plus besoin. Nous croyons fermement que chaque individu mérite un accès à une alimentation saine et nutritive. En collaborant avec des supermarchés, des restaurants et des producteurs locaux, nous recueillons les surplus alimentaires qui seraient autrement jetés.
+                      Nous nous engageons à redistribuer ces ressources alimentaires aux personnes et familles en situation de précarité. Grâce à notre réseau de bénévoles dévoués, nous organisons des collectes régulières et des distributions ciblées pour répondre aux besoins spécifiques de notre communauté.
+                      Notre ambition est de sensibiliser le public à l'importance de la solidarité et de la protection de notre environnement. En réduisant le gaspillage alimentaire, nous contribuons également à la durabilité de notre planète. Chaque geste compte, et ensemble, nous pouvons créer un impact positif. Rejoignez-nous dans notre mission pour changer des vies, une assiette à la fois.                    </p>
                 </div>
                 <img src="{{asset('img/pexels-minan1398-1093837.jpg')}}" alt="nouritture" class="h-full w-full rounded-lg object-cover">
         </div>
@@ -31,7 +32,9 @@
             <div class="ml-16 text-right">
                 <h3 class="text-3xl text-green-600 py-8 font-semibold">Notre mission</h3>
                 <p class="text-gray-500 ">
-                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quia ipsum odit ad quam, itaque nulla voluptatum voluptas eligendi ea accusantium veritatis laboriosam natus quo consequatur! Laboriosam architecto ipsam tempore. Eaque, fuga neque! Et repellendus nesciunt praesentium id, temporibus, neque similique sit eius distinctio quam nulla deleniti deserunt necessitatibus cum itaque rem consectetur reprehenderit. Omnis eaque veniam nesciunt magni voluptatem corrupti excepturi! Magni illo consequuntur enim, laboriosam ducimus non necessitatibus iste neque magnam quis obcaecati incidunt reiciendis laudantium officiis velit cupiditate perferendis tenetur, unde alias quas libero. Eaque rem reiciendis officia harum eum sit velit eligendi laudantium, ex mollitia omnis quam libero deleniti debitis ipsum optio, alias obcaecati vero! Temporibus dolores, at aliquam numquam quibusdam perspiciatis sed! Nesciunt tenetur et esse rerum blanditiis voluptatem facere modi.              
+                  La mission de <span class="text-green-600"> FOODHELPER</span> est de transformer la manière dont notre communauté perçoit et gère l'alimentation. Nous sommes déterminés à créer un système alimentaire plus juste et équitable, où chacun a accès à des repas sains et nutritifs.
+                  Nous travaillons sans relâche pour établir des partenariats avec des entreprises locales afin de récupérer les excédents alimentaires. Ces dons sont ensuite redistribués à des familles en difficulté, des personnes isolées et des refuges communautaires. Nous croyons que la lutte contre la faim commence par la solidarité et l'entraide.
+                  En plus de notre action directe, nous organisons des ateliers et des événements éducatifs pour sensibiliser la communauté sur l'importance de la nutrition et de la réduction du gaspillage. Nous encourageons les comportements responsables et l'engagement communautaire, car nous savons que c'est ensemble que nous pouvons apporter un changement durable. Au cœur de notre mission se trouve la conviction que chaque repas partagé peut renforcer les liens sociaux et bâtir un avenir meilleur pour tous. 
                 </p>
             </div>
         </div> 

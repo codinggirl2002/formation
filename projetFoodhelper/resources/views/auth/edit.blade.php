@@ -12,7 +12,7 @@
                 <label for="name" class="block text-gray-700">Nom complet</label>
                 <input type="text" name="name" id="name" value="{{ old('name', $user->name)  }}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1" required>
                 @error('name')
-                    {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -21,7 +21,7 @@
                 <label for="email" class="block text-gray-700">Email</label>
                 <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1" required>
                 @error('email')
-                   {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                @enderror
             </div>
 
@@ -30,7 +30,7 @@
                 <label for="password" class="block text-gray-700">Mot de passe</label>
                 <input type="password" name="password" id="password" value="{{ old('password', $user->password )}}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1" required>
                 @error('password')
-                   {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -39,7 +39,7 @@
                 <label for="password_confirmation" class="block text-gray-700">Confirmer le mot de passe</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password'), $user->password }}" class="outline-none  mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1" required>
                 @error('password')
-                   {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -48,7 +48,7 @@
                 <label for="phone" class="block text-gray-700">Téléphone</label>
                 <input type="text" name="phone" id="phone" value="{{ old('phone', $user->phone )}}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1">
                 @error('phone')
-                  {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -57,7 +57,7 @@
                 <label for="address" class="block text-gray-700">Adresse</label>
                 <input type="text" name="address" id="address" value="{{ old('address', $user->address )}}" class="outline-none mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 pl-1">
                 @error('address')
-                   {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -73,15 +73,16 @@
                     <label for="role_beneficiary" class="text-gray-700">Bénéficiaire</label>
                 </div>
                 @error('role')
-                  {{$message}}
+                <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
             <!-- Bouton d'inscription -->
-            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition font-bold">
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition font-bold mb-10">
                 Modifier
             </button>
-            <a href="{{route('auth.dashboarduser')}}" class="text-red-500 text-center font-bold text-xl py-4 mx-auto mt-2">Retour</a>
+            <a href="{{route('auth.dashboarduser')}}" class="bg-red-600 text-white font-bold p-2 rounded-md mt-10">Retour</a>
         </form>
     </div>
 @endsection    
+

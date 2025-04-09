@@ -11,16 +11,16 @@
     <div class="bg-green-600 w-full h-20 flex justify-between items-center px-4">
         <span class="font-bold text-white text-2xl"><a href="{{route('home')}}">FOODHELPER</a></span>
         <ul class="flex">
-            <li class="mr-5 py-1 text-white font-semibold"> contactez nous</li>
+            <li class="mr-5 py-1 text-white font-semibold"> <a href="{{route('contact')}}">contactez nous</a></li>
             <li class="border-[1px] border-white px-2 py-1 rounded-xl font-semibold text-white hover:bg-white hover:text-green-600 transition ease-out duration-500"> 
                 @php
                     $route_name = request()->route()->getName()
                 @endphp
                 
                 @if ($route_name == 'auth.login')
-                    <a href="#">s'inscrire</a>
+                    <a href="{{route('auth.register')}}">s'inscrire</a>
                 @elseif ($route_name == 'auth.register')
-                      <a href="#">se connecter</a>
+                      <a href="{{route('auth.login')}}">se connecter</a>
                 @endif   
             </li>
         </ul>

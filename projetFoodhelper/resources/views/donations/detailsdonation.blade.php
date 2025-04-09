@@ -5,8 +5,8 @@
 @section('content')
 
     <h1 class="md:text-3xl text-2xl font-semibold text-center my-12">Details de votre don de <span class="text-green-600">{{$donation->type_aliment}}</span> effectue le {{$donation->created_at}}.</h1>
-    <div class="w-3/4 mx-auto shadow-md block sm:grid sm:grid-cols-2 rounded-md">
-        <img src="/storage/{{$donation->image}}" alt="" class="object-cover h-full">
+    <div class="w-3/4 mx-auto shadow-md block sm:grid sm:grid-cols-2 rounded-md h-[400px] mb-6">
+        <img src="/storage/{{$donation->image}}" alt="" class="object-cover w-full h-[400px]">
         <div class="p-5">
             <p class="text-gray-400 font-bold">Type d'aliment: <span class="font-normal"> {{$donation->type_aliment}}</span></p>
             <p class="text-gray-400 font-bold">Description du don: <span class="font-normal">{{$donation->description}}</span> </p>

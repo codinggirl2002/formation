@@ -59,11 +59,6 @@ class User extends Authenticatable
        return $this->hasMany(Donation::class);
     }
 
-    //pour specifier qu'un utilisateur peut faire la demande de plusieurs dons.
-    /*public function donation()
-    {
-       return $this->belongsToMany(Donation::class);
-    }*/
 
     // Les demandes de dons faites par l'utilisateur (bénéficiaire)
     public function donationRequests()

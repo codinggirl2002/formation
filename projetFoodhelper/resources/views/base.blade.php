@@ -29,23 +29,41 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="main-navbar" class="fixed top-0 w-full z-50 bg-transparent transition-colors duration-300">
+    <nav id="main-navbar" class="fixed top-0 w-full z-50 bg-transparent transition-colors duration-300"  x-data="{ open: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 py-10">
                 <span>
                     <a href="{{route('home')}}"><img class="h-16 w-28 pt-2" src="{{asset('img/logo FOODHELPER vert.png')}}" alt=""></a>
                 </span>
-                <ul class="hidden md:flex ">
-                    <li class="ml-5 text-gray-400 hover:underline hover:text-green-600"><a href="{{route('home')}}">Acceuil</a></li>
-                    <li class="ml-5 text-gray-400 hover:underline hover:text-green-600"><a href="{{route('about')}}">A Propos</a></li>
-                    <li class="ml-5 text-gray-400 hover:underline hover:text-green-600"><a href="{{route('contact')}}">Contact</a></li>
-                    <li class="ml-5"><a href="{{route('auth.register')}}"  class="text-gray-400 border-2 border-green-600 rounded-xl px-2.5 py-1.5 hover:bg-green-600 hover:text-white transition ease-out  hover:-translate-y-1 duration-75">S'inscrire</a></li>
-                    <li class="ml-5"><a href="{{route('auth.login')}}" class="bg-green-600 py-2 px-2 rounded-xl text-white">Se connecter</a></li>
-                </ul>
-                <div class="md:hidden">
-                    <button @click="open = !open" class="text-gray-900 focus:outline-none">
-                        ☰
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="{{ route('home') }}" class="text-gray-400 hover:text-green-600 ml-2">Accueil</a>
+                    <a href="{{ route('about') }}" class="text-gray-400 hover:text-green-600 ml-2">À propos</a>
+                    <a href="{{ route('contact') }}" class="text-gray-400 hover:text-green-600 ml-2">Contact</a>
+                    <a href="{{route('auth.register')}}"  class="text-gray-400 ml-2 border-2 border-green-600 rounded-xl px-2.5 py-1.5 hover:bg-green-600 hover:text-white transition ease-out  hover:-translate-y-1 duration-75">S'inscrire</a>
+                    <a href="{{route('auth.login')}}" class="bg-green-600 py-2 px-2 ml-2 rounded-xl text-white">Se connecter</a>
+                </div>
+                <!-- Bouton Menu Hamburger pour Mobile -->
+                <div class="flex md:hidden items-center">
+                    <button @click = "open = !open" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600" aria-expanded="false">
+                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg x-show="open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
                     </button>
+                </div>
+                </div>
+            </div>
+            <!-- Menu Mobile -->
+            <div x-show="open" class="md:hidden bg-white">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-green-600 hover:bg-gray-50">Accueil</a>
+                <a href="{{ route('about') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-green-600 hover:bg-gray-50">À propos</a>
+                <a href="{{ route('contact') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-green-600 hover:bg-gray-50">Contact</a>
+                <a href="{{route('auth.register')}}"  class="text-gray-400 border-2  border-green-600 rounded-xl px-2.5 py-1.5 hover:bg-green-600 hover:text-white transition ease-out  hover:-translate-y-1 duration-75">S'inscrire</a>
+                <a href="{{route('auth.login')}}" class="bg-green-600 py-2 px-2 rounded-xl ml-2 text-white">Se connecter</a>
                 </div>
             </div>
         </div>
@@ -103,6 +121,12 @@
                     <span>Copyrigth&copy;2025</span>
                 </div>
             </div>
-        </footer>  
+        </footer>
+        
+    <script>
+        function Open() {
+            document.querySelector('.menu').classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

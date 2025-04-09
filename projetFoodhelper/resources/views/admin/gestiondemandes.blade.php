@@ -30,8 +30,7 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->localisation }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->type_aliment }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->date }}</td>
-                            <td class="py-2 px-4 flex space-x-2 mt-3">
-                                <a href="{{ route('demandes.edit', $demande->donation->id) }}" class="px-3 py-1 mx-1.5 text-white bg-yellow-500 hover:bg-yellow-700 rounded ">Modifier</a>
+                            <td class="py-2 px-4 border-b-[1px] border-gray-300">
                                 <form action="{{ route('demandes.destroy', $demande->donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Supprimer cette demande ?');">
                                     @csrf
                                     @method('DELETE')

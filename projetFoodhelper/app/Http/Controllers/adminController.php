@@ -15,12 +15,10 @@ class adminController extends Controller
     public function index()
     {      
         $totalDonations = donation::count();
-        $totalBeneficiaries = User::where('role', 'beneficiaire')->count();
-        $foodSaved = donation::sum('quantite'); // ou une autre logique
+        $totalBeneficiaries = demande::count();
+        $foodSaved = donation::sum('quantite'); 
 
-        $recentDonations = donation::orderBy('created_at', 'desc')->paginate(6);
-
-        return view('admin.stats', compact('totalDonations', 'totalBeneficiaries', 'foodSaved', 'recentDonations'));
+        return view('admin.stats', compact('totalDonations', 'totalBeneficiaries', 'foodSaved'));
     }
     public function gestiondons(){
         // Récupérer les dons (avec la relation utilisateur)
@@ -29,15 +27,13 @@ class adminController extends Controller
         
     }
     public function gestionusers(){
-        // Récupérer les utilisateurs (ici, tous ; vous pouvez filtrer par rôle si nécessaire)
+        // Récupérer les utilisateurs 
         $users = User::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.gestionusers', compact('users'));
     }
     public function gestiondemandes(){
         
         // Récupérer les demandes de dons
-        // Selon votre implémentation, vous pouvez utiliser un modèle dédié ou récupérer via la table pivot.
-        // Ici, nous supposons l'existence d'un modèle DonationRequest correspondant à la table 'demandes'.
         $demandes = demande::with('donation', 'user')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.gestiondemandes', compact('demandes'));
     }
@@ -91,7 +87,7 @@ class adminController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Les informations de connexion ne correspondent pas.',
+            'invalid' => 'Les informations de connexion ne correspondent pas!',
         ]);
     }
 

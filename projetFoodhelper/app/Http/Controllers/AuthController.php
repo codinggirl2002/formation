@@ -89,7 +89,7 @@ class AuthController extends Controller
     {
         $name = $user->name;
         $user->delete();
-        return redirect()->route('auth.dashboarduser')->with('success',"le compte de l'utilisateur $name a bien ete supprime!");
+        return redirect()->route('auth.register')->with('success',"le compte de l'utilisateur $name a bien ete supprime!");
     }
 }
 

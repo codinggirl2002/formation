@@ -19,7 +19,7 @@
                         <div class="text-lg text-gray-700 mt-2">Bénéficiaires</div>
                     </div>
                     <div class="bg-white py-14 border-b-green-600 border-b-[1px] rounded-lg">
-                        <div class="text-4xl font-bold text-green-600">{{ $foodSaved ?? '0' }} kg</div>
+                        <div class="text-4xl font-bold text-green-600">{{ $foodSaved ?? '0' }} kgs</div>
                         <div class="text-lg text-gray-700 mt-2">Nourriture sauvée</div>
                     </div>
                 </div>

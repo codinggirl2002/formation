@@ -19,7 +19,7 @@ class donationController extends Controller
     public function index()
     {
         return view('donations.listedonsuser', [
-            'donations' => donation::orderBy('created_at' ,'desc')->paginate(4),
+            'donations' => donation::orderBy('created_at' ,'desc')->paginate(3),
             'user' => Auth::user()  
         ]);
     }
