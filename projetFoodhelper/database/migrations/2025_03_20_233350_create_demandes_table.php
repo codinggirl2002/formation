@@ -18,9 +18,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->primary(['donation_id','user_id']);
             $table->string('type_aliment');
-            $table->date('date');
             $table-> integer('quantite');
             $table-> string('localisation');
+            $table->boolean('attribue')->default(false); // Par défaut, la demande n'est pas attribuée
             $table->timestamps();
         });
     }

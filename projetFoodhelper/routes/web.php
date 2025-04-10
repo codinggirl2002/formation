@@ -76,12 +76,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [adminController::class, 'showLoginForm'])->name('admin.login');
     // Traiter la connexion
     Route::post('/login', [adminController::class, 'login'])->name('admin.login.submit');
-    // Traiter la deconnexion
-    Route::post('/logout', [adminController::class, 'logout'])->name('admin.logout');
     // Afficher le formulaire d'inscription
     Route::get('/register', [adminController::class, 'showRegistrationForm'])->name('admin.register');
     // Traiter l'inscription
     Route::post('/register', [adminController::class, 'register'])->name('admin.register.submit');
+    //pour supprimer un administrateur
+    Route::delete('/{admin}', [adminController::class, 'destroy'])->name('admin.destroy');
+
 });
 
 // Dashboard protégé pour l'administrateur
@@ -90,6 +91,16 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard/gestionusers', [adminController::class, 'gestionusers'])->name('admin.dashboardgestionusers');
     Route::get('/dashboard/gestiondons', [adminController::class, 'gestiondons'])->name('admin.dashboardgestiondons');
     Route::get('/dashboard/gestiondemandes', [adminController::class, 'gestiondemandes'])->name('admin.dashboardgestiondemandes');
+    Route::get('/dashboard/account', [adminController::class, 'account'])->name('admin.account');
+    // Afficher le formulaire d'attribution pour un don donné
+    Route::get('/donations/{donationId}/assign', [adminController::class, 'assignForm'])->name('admin.donations.assignForm'); 
+    // Traiter l'attribution via une requête POST (ou PUT selon préférence)
+    Route::post('/donations/{donationId}/assign', [adminController::class, 'assign'])->name('admin.donations.assign');
+    // Traiter la deconnexion
+    Route::post('/logout', [adminController::class, 'logout'])->name('admin.logout');
+    //pour afficher la page de suppression d'un administrateur
+    Route::get('/{admin}/delete', [adminController::class, 'delete'])->name('admin.delete');
+
 });
 
 // Route::get('/test-guards', function () {

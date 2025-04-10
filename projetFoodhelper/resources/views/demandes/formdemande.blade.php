@@ -47,13 +47,7 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-4">
-                    <label for="date" class="block text-gray-700">Date de soumission de la demande:</label>
-                    <input type="date" name="date" id="date" value="{{old('date', $demande->date_limite)}}" min="1" class="w-full p-1 mx-auto border border-gray-300 rounded outline-none focus:border-x-transparent focus:border-t-0 focus:border-b-[1px] focus:shadow-md  focus:border-green-600 transition ease-in" />
-                    @error('date')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
+                
         
                 <button type="submit" class="w-full bg-green-600 text-white py-1 rounded hover:bg-green-700 transition my-5">
                     @if ($demande->exists)

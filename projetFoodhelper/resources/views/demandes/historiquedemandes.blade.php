@@ -29,7 +29,7 @@
                                 <td class="px-6 py-3"> {{$demande->type_aliment}} </td>
                                 <td  class="px-6 py-3"> {{$demande->quantite}} </td>
                                 <td  class="px-6 py-3"> {{$demande->localisation}} </td>
-                                <td  class="px-6 py-3"> {{$demande->date}} </td>
+                                <td  class="px-6 py-3"> {{$demande->created_at}} </td>
                                 <td  class="px-6 py-3 text-center flex">
                                     <a href="{{route('demandes.edit', ['donationId' => $demande->donation_id])}}" class="px-3 py-1 mx-1.5 text-white bg-green-500 hover:bg-green-700 rounded">Modifier</a>
                                     <form action="{{route('demandes.destroy', ['donationId' => $demande->donation_id])}}" method="post">
@@ -52,7 +52,7 @@
                             <p class="text-gray-700"><strong>type_aliment:  </strong>{{$demande->type_aliment}}</p>
                             <p class="text-gray-700"><strong>quantite:  </strong>{{$demande->quantite}}</p>
                             <p class="text-gray-700"><strong>localisation:  </strong>{{$demande->localisation}}</p>
-                            <p class="text-gray-700"><strong>date de soumission de la demande:  </strong>{{$demande->date}}</p>
+                            <p class="text-gray-700"><strong>date de soumission de la demande:  </strong>{{$demande->created_at}}</p>
                             <div class="mt-4 flex space-x-2">
                                 <a href="{{route('demandes.edit', ['donationId' => $demande->donation_id])}}" class="px-3 py-1 mx-1.5 text-white bg-green-500 hover:bg-green-700 rounded">Modifier</a>
                                 <form action="{{route('demandes.destroy', ['donationId' => $demande->donation_id])}}" method="post">

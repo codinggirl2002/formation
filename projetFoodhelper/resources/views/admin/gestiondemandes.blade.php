@@ -17,7 +17,7 @@
                             <th class="py-2 px-4 border-b">Quantité demandée</th>
                             <th class="py-2 px-4 border-b">Localisation</th>
                             <th class="py-2 px-4 border-b">Type d'aliment</th>
-                            <th class="py-2 px-4 border-b">Date</th>
+                            <th class="py-2 px-4 border-b">Date soumission</th>
                             <th class="py-2 px-4 border-b">Actions</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->quantite }} kgs</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->localisation }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->type_aliment }}</td>
-                            <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->date }}</td>
+                            <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->created_at }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">
                                 <form action="{{ route('demandes.destroy', $demande->donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Supprimer cette demande ?');">
                                     @csrf

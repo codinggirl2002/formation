@@ -125,7 +125,7 @@ class donationController extends Controller
         //$donations = $query->orderBy('created_at', 'desc')->paginate(10);
 
         return view('demandes.alldonation', [
-            'donations' => $query->orderBy('created_at' ,'desc')->paginate(6), 
+            'donations' => $query->where('statut', 'nonattribue')->orderBy('created_at' ,'desc')->paginate(6), 
             'input' =>$request->validated() 
         ]);
     }

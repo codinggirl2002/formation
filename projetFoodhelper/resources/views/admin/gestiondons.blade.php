@@ -7,6 +7,11 @@
         <h1 class="text-6xl font-bold text-center my-10 text-black" style="font-family: 'tangerine',serif">Tableau de Bord Administrateur</h1>
     
         <section class="mb-12 md:ml-[300px] ml-4">
+            @if(session('success'))
+                <div class="bg-green-100 text-green-700 p-2 rounded my-4 w-3/4 mx-auto">
+                    {{ session('success') }}
+                </div> 
+            @endif
             <h2 class="text-3xl font-semibold mb-4 text-green-600 text-center">Gestion des Dons</h2>
             @if($donations->count())
                 <table class="min-w-3/4 table w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-5">
@@ -19,6 +24,7 @@
                             <th class="py-2 px-4">Type</th>
                             <th class="py-2 px-4">Date limite</th>
                             <th class="py-2 px-4">Donateur</th>
+                            <th class="py-2 px-4">Statut</th>
                             <th class="py-2 px-4">Actions</th>
                         </tr>
                     </thead>
@@ -32,11 +38,17 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->type_aliment }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->date_limite }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->user->name }}</td>
+                            <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $donation->statut }}</td>
                             <td class="py-2 px-4  border-b-[1px] border-gray-300">
+                                @if ($donation->statut == 'nonattribue')
+                                    <a href="{{route('admin.donations.assignForm', $donation->id)}}" class="mt-4 text-center inline-block bg-green-500 text-white px-4 py-2 rounded-lg">
+                                        Attribuer le don
+                                    </a>
+                                @endif
                                 <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Confirmer la suppression de ce don ?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="px-3 py-1 mx-1.5 text-white bg-red-500 hover:bg-red-700 rounded">Supprimer</button>
+                                    <button type="submit" class="px-3 py-1 mt-2 mx-1.5 text-white bg-red-500 hover:bg-red-700 rounded">Supprimer</button>
                                 </form>
                             </td>
                         </tr>

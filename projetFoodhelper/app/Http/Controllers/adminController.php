@@ -34,7 +34,7 @@ class adminController extends Controller
     public function gestiondemandes(){
         
         // Récupérer les demandes de dons
-        $demandes = demande::with('donation', 'user')->orderBy('created_at', 'desc')->paginate(10);
+        $demandes = demande::with('donation', 'user')->where('attribue', 'true')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.gestiondemandes', compact('demandes'));
     }
 
@@ -96,6 +96,56 @@ class adminController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login');
+    }
+
+    //Affiche les informations d'un administrateur
+    public function account(){
+        $admin = Auth::guard('admin')->user();
+        $attributedDonations = donation::where('statut', 'attribue')->count();
+
+        return view('admin.account', compact('admin', 'attributedDonations'));
+    }
+    //supprimer son compte administratur
+    public function delete(admin $admin){
+        $admin = Auth::guard('admin')->user();
+        return view('admin.deleteadmin', compact('admin'));
+    }
+    public function destroy(admin $admin)
+    {
+        $admin->delete();
+        return redirect()->route('admin.register')->with('success', 'Le compte a été supprimé avec succès.');
+    }
+
+
+    /*Section d'attribution des dons aux beneficiaires par l'administrateur */
+
+
+    // Affiche le formulaire pour attribuer un don
+    public function assignForm($donationId)
+    {
+        $donation = donation::findOrFail($donationId);
+        // Récupérer toutes les demandes non encore attribuées pour ce don
+        $demandes = $donation->beneficiaries()->wherePivot('attribue', false)->get();
+        return view('admin.assign_donation', compact('donation', 'demandes'));
+    }
+
+    // Met à jour la demande dans la table pivot en marquant la demande comme "attribuée"
+    public function assign(Request $request, $donationId)
+    {
+        $request->validate([
+            'beneficiary_id' => 'required|exists:users,id',
+        ]);
+
+        $donation = donation::findOrFail($donationId);
+        $beneficiaryId = $request->input('beneficiary_id');
+
+        // Marquer dans la table pivot que ce don est attribué à ce bénéficiaire
+        $donation->beneficiaries()->updateExistingPivot($beneficiaryId, ['attribue' => true]);
+        
+        // Mettre également à jour le statut du don pour qu'il ne soit plus disponible
+        $donation->update(['statut' => 'attribue']);
+
+        return redirect()->route('admin.dashboardgestiondons')->with('success', 'Le don a été attribué avec succès.');
     }
 }
 

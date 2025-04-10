@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class donation extends Model
 {
     use HasFactory;
-    protected $fillable = ['description', 'quantite', 'user_id','localisation','type_aliment', 'date_limite','attribue', 'image'];
+    protected $fillable = ['description', 'quantite', 'user_id','localisation','type_aliment', 'date_limite','attribue', 'image', 'statut'];
 
     // Relation pour specifier qu'un don appartient à un utilisateur
     public function user()
@@ -21,7 +21,7 @@ class donation extends Model
     public function beneficiaries()
     {
         return $this->belongsToMany(User::class, 'demandes', 'donation_id', 'user_id')
-                    ->withPivot('type_aliment', 'date', 'quantite', 'localisation')
+                    ->withPivot('type_aliment', 'quantite', 'localisation')
                     ->withTimestamps();
     }
 }

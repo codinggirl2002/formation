@@ -39,7 +39,7 @@
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <label for="quantite" class="block text-gray-700">Quantité:</label>
+                    <label for="quantite" class="block text-gray-700">Quantité(En kgs):</label>
                     <input type="number" name="quantite" id="quantite" value="{{old('quantite', $donation->quantite)}}"  class="w-full p-1 border border-gray-300 rounded outline-none focus:border-x-transparent focus:border-t-0 focus:border-b-[1px] focus:shadow-md  focus:border-green-600 transition ease-in" />
                     @error('quantite')
                         <span class="text-red-500 text-sm">{{ $message }}</span>

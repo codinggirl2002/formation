@@ -25,7 +25,6 @@ class demandeFormRequest extends FormRequest
             'quantite'      => ['required', 'numeric', 'min:1'],
             'localisation'  => ['required', 'string', 'min:1'],
             'type_aliment'  => ['required', 'string', 'min:1'],
-            'date'   => ['required', 'date'],
             'donation_id'   => ['required', 'exists:donations,id'],
         ];
     }

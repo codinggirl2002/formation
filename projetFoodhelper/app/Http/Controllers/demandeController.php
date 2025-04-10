@@ -47,7 +47,6 @@ class demandeController extends Controller
         // Utiliser la relation many-to-many pour associer le bénéficiaire à la donation avec les informations complémentaires
         Auth::user()->donationRequests()->attach($donationId, [
             'type_aliment' => $data['type_aliment'],
-            'date'         => $data['date'],
             'quantite'     => $data['quantite'],
             'localisation' => $data['localisation'],
         ]);

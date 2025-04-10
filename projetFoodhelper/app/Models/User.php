@@ -64,7 +64,7 @@ class User extends Authenticatable
     public function donationRequests()
     {
         return $this->belongsToMany(Donation::class, 'demandes', 'user_id', 'donation_id')
-                    ->withPivot('type_aliment', 'date', 'quantite', 'localisation')
+                    ->withPivot('type_aliment', 'quantite', 'localisation')
                     ->withTimestamps();
     }
 }

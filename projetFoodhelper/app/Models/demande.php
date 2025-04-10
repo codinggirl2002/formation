@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class demande extends Model
 {
     use HasFactory;
-    protected $fillable = ['quantite', 'user_id','donation_id','localisation','type_aliment', 'date'];
+    protected $fillable = ['quantite', 'user_id','donation_id','localisation','type_aliment'];
 
     // Relation avec la table donations (chaque demande appartient à un don)
     public function donation()

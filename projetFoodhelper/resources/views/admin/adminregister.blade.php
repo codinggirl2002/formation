@@ -26,6 +26,11 @@
     <section class="flex justify-center items-center mt-20">
         <div class="bg-white shadow-md rounded px-8 py-4 w-full max-w-md ">
             <h1 class="text-4xl font-bold text-center text-green-600 mb-6">Inscription <br> Admin</h1>
+            @if(session('success'))
+                <div class="bg-green-100 text-green-700 p-2 rounded my-2">
+                    {{ session('success') }}
+                </div> 
+            @endif
             <form method="POST" action="{{route('admin.register.submit')}}">
                 @csrf
                 <!-- Nom complet -->
