@@ -7,6 +7,11 @@
         <h1 class="text-6xl font-bold text-center my-10 text-black" style="font-family: 'tangerine',serif">Tableau de Bord Administrateur</h1>
     
         <section class="mb-12 md:ml-[300px] ml-4">
+            @if(session('success'))
+                <div class="bg-green-100 text-green-700 p-2 rounded my-4 w-3/4 mx-auto">
+                    {{ session('success') }}
+                </div> 
+            @endif
             <h2 class="text-3xl font-semibold mb-4 text-amber-600 text-center">Gestion des Utilisateurs</h2>
             @if($users->count())
                 <table class="min-w-3/4 table w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-5">
@@ -27,7 +32,7 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $user->email }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $user->role ?? 'Utilisateur' }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">
-                                <form action="{{ route('auth.delete', $user->id) }}" method="POST" class="flex" onsubmit="return confirm('Supprimer cet utilisateur ?');">
+                                <form action="{{ route('admin.destroyuser', $user->id) }}" method="POST" class="flex" onsubmit="return confirm('Supprimer cet utilisateur ?');">
                                     @csrf
                                     @method('DELETE')
                                     <svg class="text-red-600 w-6 h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

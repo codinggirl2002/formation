@@ -80,6 +80,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/register', [adminController::class, 'showRegistrationForm'])->name('admin.register');
     // Traiter l'inscription
     Route::post('/register', [adminController::class, 'register'])->name('admin.register.submit');
+    //pour afficher le formulaire de maj
+    Route::get('/{admin}/edit', [adminController::class, 'edit']) -> name('admin.edit'); 
+    //pour gerer le traitement d la maj
+    Route::post('/{admin}/edit', [adminController::class, 'update']); 
     //pour supprimer un administrateur
     Route::delete('/{admin}', [adminController::class, 'destroy'])->name('admin.destroy');
 
@@ -100,6 +104,12 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::post('/logout', [adminController::class, 'logout'])->name('admin.logout');
     //pour afficher la page de suppression d'un administrateur
     Route::get('/{admin}/delete', [adminController::class, 'delete'])->name('admin.delete');
+    //supprimer une donation per un admin
+    Route::delete('/deletedonation/{donation}', [adminController::class, 'destroydonation'])->name('admin.destroydonation');
+    //supprimr une demande par un admin
+    Route::delete('/deletedemande/{donationId}/{beneficiaryId}', [adminController::class, 'destroydemande'])->name('admin.destroydemande');
+    //pour supprimer un utilisateur par un admin
+    Route::delete('/deleteuser/{userId}', [adminController::class, 'destroyuser'])->name('admin.destroyuser');
 
 });
 

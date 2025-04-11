@@ -40,17 +40,29 @@ class demandeController extends Controller
     {
         $data = $request->validated();
         $data['user_id'] = Auth::user()->id;
+        $user = Auth::user();
     
         // Supposons que le formulaire fournit également l'ID de la donation pour laquelle le bénéficiaire fait la demande
         $donationId = $request->input('donation_id');
     
         // Utiliser la relation many-to-many pour associer le bénéficiaire à la donation avec les informations complémentaires
-        Auth::user()->donationRequests()->attach($donationId, [
-            'type_aliment' => $data['type_aliment'],
-            'quantite'     => $data['quantite'],
-            'localisation' => $data['localisation'],
-        ]);
-    
+        // Vérifie si l'association existe déjà
+        if ($user->donationRequests()->wherePivot('donation_id', $donationId)->exists()) {
+            // Mettre à jour la demande existante dans la table pivot
+            $user->donationRequests()->updateExistingPivot($donationId, [
+                'type_aliment' => $data['type_aliment'],
+                'quantite'     => $data['quantite'],
+                'localisation' => $data['localisation'],
+            ]);
+        } else {
+            // Créer une nouvelle demande
+            $user->donationRequests()->attach($donationId, [
+                'type_aliment' => $data['type_aliment'],
+                'quantite'     => $data['quantite'],
+                'localisation' => $data['localisation'],
+            ]);
+        }
+        
         return redirect()->route('demandes.index')->with('success','votre demande a bien ete enregistree!');
     }
 
@@ -96,7 +108,7 @@ class demandeController extends Controller
     
         // Supprimer l'enregistrement de la table pivot qui lie cet utilisateur à la donation
         $user->donationRequests()->detach($donationId);
-        return redirect()->route('demandes.index')->with('success','votre don a bien ete supprime!');
+        return redirect()->route('demandes.index')->with('success','votre demande de don a bien ete supprime!');
 
     }
 }

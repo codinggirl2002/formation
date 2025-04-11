@@ -45,7 +45,7 @@
                                         Attribuer le don
                                     </a>
                                 @endif
-                                <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Confirmer la suppression de ce don ?')">
+                                <form action="{{ route('admin.destroydonation', $donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Confirmer la suppression de ce don ?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="px-3 py-1 mt-2 mx-1.5 text-white bg-red-500 hover:bg-red-700 rounded">Supprimer</button>

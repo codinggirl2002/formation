@@ -7,6 +7,11 @@
         <h1 class="text-6xl font-bold text-center my-10 text-black" style="font-family: 'tangerine',serif">Tableau de Bord Administrateur</h1>
     
         <section class="mb-12 md:ml-[300px] ml-4">
+            @if(session('success'))
+                <div class="bg-green-100 text-green-700 p-2 rounded my-4 w-3/4 mx-auto">
+                    {{ session('success') }}
+                </div> 
+            @endif
             <h2 class="text-3xl font-semibold mb-4 text-blue-600 text-center">Gestion des Demandes de Dons</h2>
             @if($demandes->count())
                 <table class="min-w-3/4 table w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-5">
@@ -31,7 +36,7 @@
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->type_aliment }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">{{ $demande->created_at }}</td>
                             <td class="py-2 px-4 border-b-[1px] border-gray-300">
-                                <form action="{{ route('demandes.destroy', $demande->donation->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Supprimer cette demande ?');">
+                                <form action="{{ route('admin.destroydemande', [$demande->donation->id, $demande->user->id]) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Supprimer cette demande ?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="px-3 py-1 mx-1.5 text-white bg-red-500 hover:bg-red-700 rounded">Supprimer</button>

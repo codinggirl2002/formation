@@ -9,6 +9,9 @@ use App\Models\donation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class adminController extends Controller
 {
@@ -63,6 +66,36 @@ class adminController extends Controller
         Auth::guard('admin')->login($admin);
 
         return redirect()->route('admin.dashboardstats')->with('success', 'Inscription réussie !');
+    }
+
+    //affiche le formulaire pour la maj des informations
+    public function edit(admin $admin){
+        $admin = Auth::guard('admin')->user();
+        return view('admin.adminedit', compact('admin'));
+    }
+
+    //traite la maj des informations
+    public function update(admin $admin, Request $request){
+       
+        $validated = $request->validate([
+            'name'     => 'required|string|max:255',
+            'email'    => [
+                'required',
+                'email',
+                'max:255',
+                Rule::unique('admins')->ignore($admin->id)
+            ],
+            'password' => 'nullable|string|min:6|confirmed'
+        ]);
+
+        if (!empty($validated['password'])) {
+            $validated['password'] = Hash::make($validated['password']);
+        } else {
+            unset($validated['password']);
+        }
+
+        $admin->update($validated);
+        return redirect()->route('admin.account')->with('success', 'Mise a jour des informations réussie !');
     }
 
     // Affiche le formulaire de connexion pour l'administrateur
@@ -144,8 +177,35 @@ class adminController extends Controller
         
         // Mettre également à jour le statut du don pour qu'il ne soit plus disponible
         $donation->update(['statut' => 'attribue']);
-
         return redirect()->route('admin.dashboardgestiondons')->with('success', 'Le don a été attribué avec succès.');
+    }
+
+    /*   Suppression  */
+    //supprimer une donation per un admin
+    public function destroydonation(donation $donation)
+    {
+        $donation->delete();
+        return redirect()->route('admin.dashboardgestiondons')->with('success','Le don a bien ete supprime!');
+
+    }
+
+    //supprimr une demande par un admin
+    public function destroydemande($donationId, $beneficiaryId)
+    {
+        DB::table('demandes')
+            ->where('donation_id', $donationId)
+            ->where('user_id', $beneficiaryId)
+            ->delete();
+        return redirect()->route('admin.dashboardgestiondemandes')->with('success','votre demande de don a bien ete supprime!');
+
+    }
+    //supprimer un utilisateur
+    public function destroyuser($userId)
+    {
+        DB::table('users')
+            ->where('id', $userId)
+            ->delete();
+        return redirect()->route('admin.dashboardgestionusers')->with('success',"le compte de l'utilisateur a bien ete supprime!");
     }
 }
 
