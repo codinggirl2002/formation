@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation : Gérer le Stress et la Culpabilité - Mamans d'Ados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .date-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .emoji {
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Coach Section */
+        .coach-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .coach-card {
+            background: linear-gradient(145deg, #f0f0f0, #ffffff);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coach-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa500, #667eea, #764ba2);
+        }
+
+        .coach-name {
+            font-size: 2rem;
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .coach-title {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .coach-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* What You'll Get Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #764ba2;
+        }
+
+        /* Event Details */
+        .event-details {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .details-card {
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .detail-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: #f8f8f8;
+        }
+
+        .share-text {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-card {
+                padding: 30px;
+            }
+        }
+
+        /* Floating elements */
+        .floating-heart {
+            position: fixed;
+            color: #ff6b6b;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1000;
+        }
+
+        .heart-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .heart-2 { top: 60%; right: 10%; animation-delay: 2s; }
+        .heart-3 { top: 80%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-heart heart-1">💝</div>
+    <div class="floating-heart heart-2">🧡</div>
+    <div class="floating-heart heart-3">💖</div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">👩‍👧‍👦 Mamans d'Ados</div>
+            <div class="date-badge">🗓️ 25 Mai 2025 - 17h</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span class="emoji">🎉</span>
+                GÉRER LE STRESS ET LA CULPABILITÉ
+                <span class="emoji">🎉</span>
+            </h1>
+            <p class="subtitle">
+                <strong>Quand on est maman d'ados</strong><br>
+                Formation offerte pour préserver votre santé mentale
+            </p>
+        </div>
+    </section>
+
+    <!-- Coach Section -->
+    <section class="coach-section">
+        <div class="container">
+            <div class="coach-card">
+                <h2 class="coach-name">Micheline SAME</h2>
+                <p class="coach-title">Coach Parentale & Psychologue</p>
+                <p class="coach-intro">
+                    Je suis super contente de vous accueillir dans cette aventure transformatrice ! 
+                    En tant que coach parentale et psychologue, j'accompagne les mamans d'adolescents 
+                    à retrouver sérénité et confiance dans leur rôle parental.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Ce que vous allez recevoir 🔥</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✅</span>
+                    <h3 class="benefit-title">Infos Pratiques</h3>
+                    <p>Toutes les informations essentielles pour participer sereinement à la formation</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📚</span>
+                    <h3 class="benefit-title">Ressources Préparatoires</h3>
+                    <p>Des outils et supports pour vous préparer et maximiser les bénéfices de la formation</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔥</span>
+                    <h3 class="benefit-title">Énergie de Feu</h3>
+                    <p>Une motivation intense pour transformer votre quotidien de maman d'ados</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💪</span>
+                    <h3 class="benefit-title">Accompagnement</h3>
+                    <p>Un suivi pas à pas jusqu'au jour J et pendant toute l'aventure</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🧠</span>
+                    <h3 class="benefit-title">Santé Mentale</h3>
+                    <p>Des techniques concrètes pour préserver votre bien-être psychologique</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">👥</span>
+                    <h3 class="benefit-title">Communauté</h3>
+                    <p>Rejoignez un groupe de mamans qui ont décidé de prendre soin d'elles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="event-details">
+        <div class="container">
+            <h2 class="section-title">Détails de l'Événement</h2>
+            <div class="details-card">
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <span><strong>Date :</strong> Dimanche 25 Mai 2025</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🕐</span>
+                    <span><strong>Heure :</strong> 17h (Heure d'Afrique Centrale)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💻</span>
+                    <span><strong>Format :</strong> Formation en ligne</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🎁</span>
+                    <span><strong>Prix :</strong> Formation OFFERTE</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">👥</span>
+                    <span><strong>Public :</strong> Mamans d'adolescents</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Prête à Transformer Votre Quotidien ?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                Rejoignez dès maintenant le groupe des mamans d'ados qui ont décidé de préserver leur santé mentale 💝
+            </p>
+            
+            <a href="https://bit.ly/4krcCwT" class="cta-button" target="_blank">
+                🚀 REJOINDRE LA FORMATION GRATUITE
+            </a>
+            
+            <div class="share-text">
+                <p>📌 <strong>N'hésitez pas à inviter vos amies !</strong></p>
+                <p>Elles ont tout à gagner en rejoignant cette communauté bienveillante</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Formation Mamans d'Ados - Micheline SAME</p>
+            <p>Coach Parentale & Psychologue</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe benefit cards
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add countdown effect to date badge
+        function updateCountdown() {
+            const eventDate = new Date('2025-05-25T17:00:00');
+            const now = new Date();
+            const timeLeft = eventDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const badge = document.querySelector('.date-badge');
+                if (days > 0) {
+                    badge.innerHTML = `🗓️ Dans ${days} jour${days > 1 ? 's' : ''} !`;
+                }
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 86400000); // Update daily
+    </script>
+</body>
+</html>
