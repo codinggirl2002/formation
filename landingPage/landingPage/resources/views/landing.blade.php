@@ -15,7 +15,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="urgency-badge">⚠️ Formation Dimanche 8 Juin – Places Limitées</div>
+                <div class="urgency-badge">⚠️ Formation Gratuite – Places Limitées</div>
                 <h1>Comment Renouer le Lien avec Mon Ado Avant qu'il ne Soit Trop Tard ?</h1>
                 <p class="subtitle">
                     Retrouvez la complicité perdue et créez une relation authentique avec votre adolescent
@@ -201,7 +201,7 @@
     {{-- Section final CTA --}}
     <section class="section">
         <div class="container" style="text-align: center;">
-            <h2 style="color: black;">Formation Dimanche 8 Juin – Dernières Places</h2>
+            <h2 style="color: black;">Formation Gratuite – Dernières Places</h2>
             <p style="font-size: 1.3rem; margin-bottom: 2rem;">
                 ⏰ Ne laissez pas passer cette opportunité de transformer votre relation avec votre adolescent
             </p>
