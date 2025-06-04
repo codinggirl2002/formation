@@ -30,7 +30,7 @@
             position: relative;
             color: white;
             text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/photocover.jpg')  no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/maman2.jpg')  no-repeat center center/cover;
 
         }
         .hero::before {
@@ -68,7 +68,7 @@
         }
         .urgency-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: #ee1b24;
             color: white;
             padding: 12px 24px;
             border-radius: 50px;
@@ -84,7 +84,7 @@
         }
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
+            background: linear-gradient(45deg, #f35928 0%, #fdd835 100%);
             color: white;
             padding: 18px 40px;
             border-radius: 50px;
@@ -110,7 +110,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: black;
             position: relative;
         }
         .section h2::after {
@@ -121,14 +121,14 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #f35928 0%, #d32f2f 100%);
             border-radius: 2px;
         }
         .pain-points {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
         .pain-point {
             background: white;
@@ -136,24 +136,23 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            border-left: 5px solid #ff6b6b;
+            border-left: 5px solid #c2272d;
         }
         .pain-point:hover {
             transform: translateY(-5px);
         }
         .pain-point h3 {
-            color: #e74c3c;
+            color: #c2272d;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
         .benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
         .benefit {
             text-align: center;
-            padding: 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 20px;
@@ -167,13 +166,46 @@
             margin-bottom: 1rem;
             display: block;
         }
+        .video-container {
+          position: relative;
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+          padding-top: 56.25%; /* ratio 16:9 */
+          background: #000;
+        }
+
+        .video-container video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .media-gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          margin: 20px 0;
+      }
+
+      .media-item img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
         .testimonial {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: #f35928;
             color: white;
             padding: 3rem;
             border-radius: 20px;
             text-align: center;
-            margin: 3rem 0;
+            margin: 0;
+            margin-top: 100px;
             position: relative;
             overflow: hidden;
         }
@@ -186,7 +218,7 @@
             opacity: 0.3;
         }
         .formatrice-section {
-            background: linear-gradient(135deg, #e0c3fc 0%, #9bb5ff 100%);
+            background: #d9d9d9;
             padding: 80px 0;
             position: relative;
             overflow: hidden;
@@ -226,7 +258,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
             font-size: 6rem;
             color: white;
             box-shadow: 0 20px 60px rgba(0,0,0,0.2);
@@ -261,7 +293,7 @@
         .formatrice-name {
             font-size: 2rem;
             font-weight: 700;
-            color: #667eea;
+            color: #f35928;
             margin-bottom: 1rem;
         }
         .formatrice-description {
@@ -293,28 +325,33 @@
             display: block;
         }
         .highlight-item h4 {
-            color: #667eea;
+            color: #f35928;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
+        .gradient-border {
+            padding: 3px;
+            background: linear-gradient(135deg, #f35928 0%, #f34228 40%, #ee1b24 100%);
+            border-radius: 25px;
+            
+        }
         .program-details {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 3rem 0;
+          background: white;
+          padding: 2rem;
+          border-radius: 20px;
         }
         .program-item {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
             padding: 1rem;
-            background: rgba(255,255,255,0.7);
+            background: #d9d9d96b;
             border-radius: 10px;
         }
         .program-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #f35928 0%, #d32f2f 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -324,8 +361,8 @@
             font-weight: bold;
         }
         .footer {
-            background: #2c3e50;
-            color: white;
+            background: white;
+            color: black;
             text-align: center;
             padding: 2rem;
         }
@@ -351,8 +388,8 @@
             animation: fadeIn 0.3s ease-out;
         }
         .modal-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 2% auto;
+          background: white;
+          margin: 2% auto;
             padding: 0;
             border-radius: 20px;
             width: 90%;
@@ -372,11 +409,11 @@
             to   { transform: translateY(0);    opacity: 1; }
         }
         .modal-header {
-            background: rgba(255,255,255,0.1);
+            background: #f35928;
             padding: 2rem;
             border-radius: 20px 20px 0 0;
             text-align: center;
-            color: white;
+            color: #f35928;
         }
         .modal-header h2 {
             margin: 0;
@@ -387,7 +424,7 @@
             position: absolute;
             right: 15px;
             top: 15px;
-            color: white;
+            color: rgb(180, 179, 179);
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
@@ -398,7 +435,7 @@
         }
         .modal-body {
             padding: 2rem;
-            color: white;
+            color: black;
         }
         .form-group {
             margin-bottom: 0.5rem;
@@ -413,10 +450,10 @@
         .form-group textarea {
             width: 100%;
             padding: 12px 15px;
-            border: none;
+            border: 1px solid rgba(180, 179, 179, 0.589);
             border-radius: 10px;
             font-size: 1rem;
-            background: rgba(255,255,255,0.9);
+            background: white;
             color: #333;
             box-sizing: border-box;
         }
@@ -424,7 +461,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            background: white;
+            background: rgba(180, 179, 179, 0.185);
             box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
         }
         .form-group textarea {
@@ -433,7 +470,7 @@
         }
         .submit-btn {
             width: 100%;
-            background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
+            background: linear-gradient(45deg, #f35928 0%, #fdd835 100%);
             color: white;
             padding: 15px;
             border: none;
@@ -492,6 +529,9 @@
                 grid-template-columns: 1fr;
             }
         }
+
+
+    
     </style>
 
     @yield('extra-css')

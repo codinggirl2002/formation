@@ -53,43 +53,65 @@
     {{-- Section “Imaginez Si Vous Pouviez …” --}}
     <section class="section">
         <div class="container">
-            <h2 id="benefits">Imaginez Si Vous Pouviez …</h2>
+            <h2 id="benefits">Temoignages…</h2>
             <div class="benefits">
-                <div class="benefit">
-                    <span class="benefit-icon">🤝</span>
-                    <h3>Retrouver la Complicité</h3>
-                    <p>Renouer avec cette relation privilégiée que vous aviez quand il était plus jeune</p>
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <!-- Déclaration des différentes sources (formats) -->
+                        <source src="{{asset('img/temv1.mp4')}}" type="video/mp4">
+                        <!-- Message de secours si la balise n'est pas supportée -->
+                        Votre navigateur ne supporte pas la balise <code>video</code>.
+                      </video>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon">💬</span>
-                    <h3>Communiquer Sereinement</h3>
-                    <p>Avoir des conversations apaisées sans cris ni claquements de porte</p>
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <!-- Déclaration des différentes sources (formats) -->
+                        <source src="{{asset('img/temv2.mp4')}}" type="video/mp4">
+                        <!-- Message de secours si la balise n'est pas supportée -->
+                        Votre navigateur ne supporte pas la balise <code>video</code>.
+                      </video>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon">💖</span>
-                    <h3>Sentir Sa Confiance</h3>
-                    <p>Redevenir cette personne vers qui il se tourne naturellement</p>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">🌟</span>
-                    <h3>L'Accompagner Positivement</h3>
-                    <p>Être un guide bienveillant dans cette période de transformation</p>
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <!-- Déclaration des différentes sources (formats) -->
+                        <source src="{{asset('img/temv3.mp4')}}" type="video/mp4">
+                        <!-- Message de secours si la balise n'est pas supportée -->
+                        Votre navigateur ne supporte pas la balise <code>video</code>.
+                      </video>
                 </div>
             </div>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <img src="{{asset('img/temi1.jpeg')}}" alt="Image 1">
+                    </div>
+                    <div class="media-item">
+                        <img src="{{asset('img/temi2.jpeg')}}" alt="Image 2">
+                    </div>
+                    <div class="media-item">
+                        <img src="{{asset('img/temi3.jpeg')}}" alt="Image 3">
+                    </div>
+                </div>
+            
+                <div class="testimonial">
+                    <p style="font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem;">
+                        "J'étais au bout du rouleau avec mon fils de 16 ans. Grâce à cette formation, j'ai compris que son comportement était normal et j'ai appris comment me rapprocher de lui sans le braquer. Aujourd'hui, il me parle à nouveau et je me sens enfin utile comme maman !"
+                    </p>
+                    <strong>- Sophie, maman de Lucas </strong>
+                </div>
         </div>
     </section>
 
     {{-- Section témoignage --}}
-    <section class="section">
+    <!--section class="section">
         <div class="container">
             <div class="testimonial">
                 <p style="font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem;">
-                    "Grâce à cette formation, j'ai enfin compris comment approcher ma fille de 15 ans. Nous parlons à nouveau et elle me fait même des confidences. C'est un miracle !"
+                    "J'étais au bout du rouleau avec mon fils de 16 ans. Grâce à cette formation, j'ai compris que son comportement était normal et j'ai appris comment me rapprocher de lui sans le braquer. Aujourd'hui, il me parle à nouveau et je me sens enfin utile comme maman !"
                 </p>
-                <strong>- Marie, maman de Léa</strong>
+                <strong>- Sophie, maman de Lucas </strong>
             </div>
         </div>
-    </section>
+    </!--section-->
 
     {{-- Section formatrice --}}
     <section class="formatrice-section">
@@ -117,13 +139,8 @@
                     </div>
                     <div class="highlight-item">
                         <span class="highlight-icon">💼</span>
-                        <h4>Coach Parentale</h4>
+                        <h4>Coach Parentale & Psychologue</h4>
                         <p>Accompagnement personnalisé</p>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🧠</span>
-                        <h4>Psychologue</h4>
-                        <p>Approche scientifique</p>
                     </div>
                     <div class="highlight-item">
                         <span class="highlight-icon">👥</span>
@@ -139,40 +156,42 @@
     <section class="section">
         <div class="container">
             <h2 id="programme">Programme de la Formation</h2>
-            <div class="program-details">
-                <div class="program-item">
-                    <div class="program-icon">1</div>
-                    <div>
-                        <h3>Décoder le Monde de l'Adolescent</h3>
-                        <p>Comprendre les transformations physiques, émotionnelles et sociales de cette période</p>
+            <div class="gradient-border">
+                <div class="program-details">
+                    <div class="program-item">
+                        <div class="program-icon">1</div>
+                        <div>
+                            <h3>Décoder le Monde de l'Adolescent</h3>
+                            <p>Comprendre les transformations physiques, émotionnelles et sociales de cette période</p>
+                        </div>
                     </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-icon">2</div>
-                    <div>
-                        <h3>Les Clés de la Communication</h3>
-                        <p>Techniques concrètes pour ouvrir le dialogue sans jugement ni pression</p>
+                    <div class="program-item">
+                        <div class="program-icon">2</div>
+                        <div>
+                            <h3>Les Clés de la Communication</h3>
+                            <p>Techniques concrètes pour ouvrir le dialogue sans jugement ni pression</p>
+                        </div>
                     </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-icon">3</div>
-                    <div>
-                        <h3>Gérer les Conflits Autrement</h3>
-                        <p>Transformer les tensions en opportunités de rapprochement</p>
+                    <div class="program-item">
+                        <div class="program-icon">3</div>
+                        <div>
+                            <h3>Gérer les Conflits Autrement</h3>
+                            <p>Transformer les tensions en opportunités de rapprochement</p>
+                        </div>
                     </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-icon">4</div>
-                    <div>
-                        <h3>Reconstruire la Confiance</h3>
-                        <p>Stratégies pour redevenir une figure de référence positive</p>
+                    <div class="program-item">
+                        <div class="program-icon">4</div>
+                        <div>
+                            <h3>Reconstruire la Confiance</h3>
+                            <p>Stratégies pour redevenir une figure de référence positive</p>
+                        </div>
                     </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-icon">5</div>
-                    <div>
-                        <h3>Plan d'Action Personnalisé</h3>
-                        <p>Repartez avec des outils concrets adaptés à votre situation</p>
+                    <div class="program-item">
+                        <div class="program-icon">5</div>
+                        <div>
+                            <h3>Plan d'Action Personnalisé</h3>
+                            <p>Repartez avec des outils concrets adaptés à votre situation</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,16 +231,16 @@
     <div class="floating-cta">
         <a href="javascript:void(0);" class="cta-button" style="padding: 15px 25px;" onclick="openModal()">📞 S'Inscrire</a>
     </div>
-
+    <hr>
     {{-- Footer --}}
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Formation Parentalité. Transformez votre relation avec votre adolescent.</p>
             <p style="margin-top: 1rem; opacity: 0.8;">
                 Rejoignez notre communauté sur 
-                <a href="https://www.facebook.com/Lesparentsdado" target="_blank" style="color: #4267B2; text-decoration: none;">Facebook</a> 
+                <a href="https://www.facebook.com/Lesparentsdado" target="_blank" style="color: #11398a; text-decoration: none;">Facebook</a> 
                 et 
-                <a href="https://chat.whatsapp.com/Jwel6RT6Yi06T1e5UbkhO9" target="_blank" style="color: #25D366; text-decoration: none;">WhatsApp</a>
+                <a href="https://chat.whatsapp.com/Jwel6RT6Yi06T1e5UbkhO9" target="_blank" style="color: #0e8d3c; text-decoration: none;">WhatsApp</a>
             </p>
         </div>
     </footer>
